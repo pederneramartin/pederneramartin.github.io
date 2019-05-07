@@ -2,7 +2,10 @@
 title: "Web Scraping with Python"
 layout: post
 date: 2019-05-07 20:00
-tag: webscraping
+tag: 
+- webscraping
+- python
+- selenium
 image:
 headerImage: False
 projects: true
