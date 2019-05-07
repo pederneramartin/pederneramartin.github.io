@@ -1,5 +1,5 @@
 ---
-title: "Web Scraping"
+title: "Web Scraping Using Selenium"
 layout: post
 date: 2019-05-07 20:00
 tag: webscraping
@@ -13,7 +13,7 @@ author: johndoe
 externalLink: false
 ---
 
-Web Scraping Project for E-commerce Site - Selenium for browser automatization -
+Web Scraping Project for E-commerce Site - Selenium for browser automatization
 
 ---
 ```python
