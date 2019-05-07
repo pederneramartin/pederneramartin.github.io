@@ -57,7 +57,7 @@ authors:
     pederneramartin:
         name: Pedernera Martin
         bio: Industrial Engineer in the Data Science & Data Analysis World
-        external-image: True
+        external-image: false
         picture: assets/images/profile.jpg
        # twitter: johndoe
     #jamesfoster:
