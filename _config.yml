@@ -14,10 +14,10 @@ picture: assets/images/profile.jpg
 # and specify source (external or local).
 resume: true
 resume-external: true
-resume-url: https://google.com/?q=my+resume
+resume-url: https://drive.google.com/file/d/1bUwDZrSUkLzN-eYH-jDAU5pVVu5cYBAV/view?usp=sharing
 
-url: https://koppl.in/indigo
-# your url: http://USERNAME.github.io
+url: http://pederneramartin.github.io
+# your url: http://pederneramartin.github.io
 
 permalink: /:title/
 
@@ -42,7 +42,7 @@ disqus:
 linkedin: pederneramarting
 # youtube: myyoutube
 # spotify: myspotify
-github: pederneramarting
+github: pederneramartin
 # gitlab: mygitlab
 # lastfm: mylastfm
 # stackoverflow: 7044681/mystackoverflow
