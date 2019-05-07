@@ -1,5 +1,5 @@
 ---
-title: "Web Scraping Using Selenium"
+title: "Web Scraping with Python"
 layout: post
 date: 2019-05-07 20:00
 tag: webscraping
@@ -13,12 +13,12 @@ author: johndoe
 externalLink: false
 ---
 
-Web Scraping Project for E-commerce Site - Selenium for browser automatization
+Python Web Scraping Project for E-commerce Site - Library Selenium (web automatization)
 
 ---
 ```python
 	from selenium import webdriver
-	import csv,os,json
+	import json
 	import time
 
 	#CHROME
