@@ -13,7 +13,7 @@ I currently live in Dublin, doing a 3-month English course and in the pursuit of
 
 I have completed a degree in Industrial Engineering (Bachelor of Engineering + Master of Science in Industrial Engineering) with an excellent background in Math, Statistic and Computer Science (it was here that I realized my passion about data and programming).
 
-In the past, I have worked in different positions such as BI analyst, director manager, quality management intern and production and maintenance intern, and also in different fields like ecommerce, brewery and steel factory. Although I have never had the possibility to work as a Data Scientist, in most of them I had the possibility to develop and apply projects related to it.
+In the past, I have worked in different positions such as BI analyst, director manager, quality management intern and production and maintenance intern, and also in different fields like ecommerce, brewery and steel factory. Although I have never had the possibility to work as a Data Scientist, in most of them I have developed and applied projects related to it.
 
 <hr>
 
@@ -42,4 +42,4 @@ I take online courses for different Data Science topics and work independently o
 
 Check out my [projects](/projects).
 
-Feel free to contact me on [LinkedIn](https://www.linkedin.com/in/pederneramarting) or <a href="mailto:pederneramarting@gmail.com">Email</a> if you want to discuss opportunities, collaboration or any other enquire. 
+Feel free to contact me on [LinkedIn](https://www.linkedin.com/in/pederneramarting) or <a href="mailto:pederneramarting@gmail.com">Email</a> if you want to discuss opportunities, collaboration or any other enquiry. 
