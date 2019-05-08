@@ -7,39 +7,39 @@ layout: page
 
 Hi, I’m Martin.
 
-I hail in Rosario, Argentina. Though, I have lived two years in Buenos Aires, Argentina (the capital city)
+I hail in Rosario, Argentina. Though, I have lived two years in Buenos Aires, Argentina.
 
 I currently live in Dublin, doing a 3-month English Course (although I have an advanced level, English is not my mother language, so always there are new things to learn) and in the pursuit of my first experience in the data science world.
 
-As you can see in my CV, I have completed a degree in Industrial Engineering (Bachelor of Engineering + Master of Science in Industrial Engineering) with an excellent background in Math, Statistic and Computer Science (and it was here that I realized my passion about data and programming)
+As you can see in my CV, I have completed a degree in Industrial Engineering (Bachelor of Engineering + Master of Science in Industrial Engineering) with an excellent background in Math, Statistic and Computer Science (it was here that I realized my passion about data and programming).
 
-In the past, I have worked in different positions such as BI Analyst, director manager, quality management intern and production and maintenance intern, and also in different fields like ecommerce, brewery and steel factory. Although I have never had the possibility to work as a Data Scientist, in most of them I had the possibility to develop and apply projects related to it (check out my portfolio).
+In the past, I have worked in different positions such as BI analyst, director manager, quality management intern and production and maintenance intern, and also in different fields like ecommerce, brewery and steel factory. Although I have never had the possibility to work as a Data Scientist, in most of them I had the possibility to develop and apply projects related to it (check out my portfolio).
 
 <hr>
 
-<h2>Skills</h2>
+### What I know
 
-<ul class="skill-list">
-	<li>HTML - Jade - Haml - Erb</li>
-	<li>Responsive (Mobile First)</li>
-	<li>CSS (Stylus, Sass, Less)</li>
-	<li>Css Frameworks (Bootstrap, Foundation)</li>
-	<li>Javascript (Design Patterns, Testes)</li>
-	<li>NodeJS</li>
-	<li>AngularJS - ReactJS</li>
-	<li>Grunt - Gulp - Yeoman</li>
-	<li>Git</li>
-	<li>PHP</li>
-	<li>Python</li>
-	<li>MySQL - MongoDB</li>
-	<li>Scrum and Kanban</li>
-	<li>TDD e Continuous Integration</li>
-</ul>
+As a result of my curiosity, I have practical experience with a wide range of technologies including:
 
-<h2>Projects</h2>
+Python • HTML • CSS • Bootstrap • Postgre SQL • SQLite • MongoDB • Scikit-Learn • NLTK • Pandas • Numpy • Selenium • 
 
-<ul>
-	<li><a href="https://github.com/">Lorem Lorem</a></li>
-	<li><a href="https://github.com/">Ipsum Dolor</a></li>
-	<li><a href="https://github.com/">Dolor Lorem</a></li>
-</ul>
+for use with concepts such as:
+
+Machine Learning Algorithms, Data Analytics, Statistical Data Analysis, Natural Language Processing, Data Visualization, Database Systems & Information Modelling • Software Engineering • Web Application Development, <em>and more!</em>
+
+<hr>
+
+### Certificates I've completed:
+
+I take online courses for different Data Science topics and work independently on projects in my free time. Some of them include:
+
+* Data Scientist in Python - Dataquest.io
+* Data Analyst in Python - Dataquest.io
+* Analyzing and visualizing data with Excel - by Microsoft Academy - Edx
+* Analyzing and visualizing data with PowerBI - by Microsoft Academy - Edx
+* Analytics in Python - by MITx - Edx
+
+
+Check out my portfolio.
+
+Feel free to contact me on [LinkedIn](https://www.linkedin.com/in/pederneramarting) or <a href="mailto:pederneramarting@gmail.com">email</a> if you want to discuss opportunities, collaboration or any consulting 
