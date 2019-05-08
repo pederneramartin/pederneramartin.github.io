@@ -1,6 +1,5 @@
 ---
 title: "Web Scraping with Python"
-description: "Web Scraping using Selenium"
 layout: post
 date: 2019-05-07 20:00
 tag: 

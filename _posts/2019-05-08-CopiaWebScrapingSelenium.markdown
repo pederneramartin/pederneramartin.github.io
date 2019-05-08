@@ -1,6 +1,5 @@
 ---
 title: "Prueba de un segundo post a ver como se ve"
-description: "Web Scraping is a technique employed to extract large amounts of data from websites"
 layout: post
 date: 2019-05-07 20:00
 tag: 
@@ -11,7 +10,7 @@ image:
 headerImage: False
 projects: true
 hidden: false # don't count this post in blog pagination
-description: "Web Scraping using Selenium."
+description: "Web Scraping is a technique employed to extract large amounts of data from websites"
 category: project
 author: johndoe
 externalLink: false
