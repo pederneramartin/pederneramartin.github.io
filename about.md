@@ -42,4 +42,4 @@ I take online courses for different Data Science topics and work independently o
 
 Check out my portfolio.
 
-Feel free to contact me on [LinkedIn](https://www.linkedin.com/in/pederneramarting) or <a href="mailto:pederneramarting@gmail.com">email</a> if you want to discuss opportunities, collaboration or any consulting 
+Feel free to contact me on [LinkedIn](https://www.linkedin.com/in/pederneramarting) or <a href="mailto:pederneramarting@gmail.com">Email</a> if you want to discuss opportunities, collaboration or any consulting 
