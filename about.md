@@ -17,15 +17,15 @@ In the past, I have worked in different positions such as BI analyst, director m
 
 <hr>
 
-### What I know
+### What I know:
 
 As a result of my curiosity, I have practical experience with a wide range of technologies including:
 
-Python • HTML • CSS • Bootstrap • Postgre SQL • SQLite • MongoDB • Scikit-Learn • NLTK • Pandas • Numpy • Selenium • 
+Python • Scikit-Learn • NLTK • Pandas • Numpy • Selenium • BeatifulSoup • Postgre SQL • SQLite • MongoDB • HTML • CSS • Bootstrap
 
 for use with concepts such as:
 
-Machine Learning Algorithms, Data Analytics, Statistical Data Analysis, Natural Language Processing, Data Visualization, Database Systems & Information Modelling • Software Engineering • Web Application Development, <em>and more!</em>
+Machine Learning Algorithms, Data Analytics, Statistical Data Analysis, Natural Language Processing, Data Visualization, Software Engineering, Web Application Development, <em>and more!</em>
 
 <hr>
 
