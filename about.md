@@ -7,7 +7,7 @@ layout: page
 
 Hi, I’m Martin.
 
-I hail in Rosario, Argentina. Though, I have lived two years in Buenos Aires, Argentina.
+I hail from Rosario, Argentina. Though, I have lived two years in Buenos Aires, Argentina.
 
 I currently live in Dublin, doing a 3-month English Course (although I have an advanced level, English is not my mother language, so always there are new things to learn) and in the pursuit of my first experience in the data science world.
 
