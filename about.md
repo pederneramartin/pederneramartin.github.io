@@ -4,19 +4,18 @@ layout: page
 ---
 ![Profile Image]({{ site.url }}/{{ site.picture }})
 
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<h1>About ME</h1>
 
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<p>Hi, I’m Martin.
+
+I hail in Rosario, Argentina. Though, I have lived two years in Buenos Aires, Argentina (the capital city).
+
+I currently live in Dublin, doing a 3-month English Course (although I have an advanced level, English is not my mother language, so always there are new things to learn) and in the pursuit of my first experience in the data science world.
+
+As you can see in my CV, I have completed a degree in Industrial Engineering (Bachelor of Engineering + Master of Science in Industrial Engineering) with an excellent background in Math, Statistic and Computer Science (and it was here that I realized my passion about data and programming).
+
+In the past, I have worked in different positions such as BI Analyst, director manager, quality management intern and production and maintenance intern, and also in different fields like ecommerce, brewery and steel factory. Although I have never had the possibility to work as a Data Scientist, in most of them I had the possibility to develop and apply projects related to it (check out my portfolio).
+</p>
 
 <h2>Skills</h2>
 
