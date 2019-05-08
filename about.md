@@ -11,13 +11,13 @@ I hail in Rosario, Argentina. Though, I have lived two years in Buenos Aires, Ar
 
 I currently live in Dublin, doing a 3-month English Course (although I have an advanced level, English is not my mother language, so always there are new things to learn) and in the pursuit of my first experience in the data science world.
 
-As you can see in my CV, I have completed a degree in Industrial Engineering (Bachelor of Engineering + Master of Science in Industrial Engineering) with an excellent background in Math, Statistic and Computer Science (it was here that I realized my passion about data and programming).
+I have completed a degree in Industrial Engineering (Bachelor of Engineering + Master of Science in Industrial Engineering) with an excellent background in Math, Statistic and Computer Science (it was here that I realized my passion about data and programming).
 
 In the past, I have worked in different positions such as BI analyst, director manager, quality management intern and production and maintenance intern, and also in different fields like ecommerce, brewery and steel factory. Although I have never had the possibility to work as a Data Scientist, in most of them I had the possibility to develop and apply projects related to it (check out my portfolio).
 
 <hr>
 
-### What I know:
+### What I know:
 
 As a result of my curiosity, I have practical experience with a wide range of technologies including:
 
