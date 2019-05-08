@@ -9,7 +9,7 @@ Hi, I’m Martin.
 
 I hail from Rosario, Argentina. Though, I have lived two years in Buenos Aires, Argentina.
 
-I currently live in Dublin, doing a 3-month English course and in the pursuit of my first experience in the data science world.
+I currently live in Dublin, doing a 3-month English course and in the pursuit of my first professional experience as a data scienctist.
 
 I have completed a degree in Industrial Engineering (Bachelor of Engineering + Master of Science in Industrial Engineering) with an excellent background in Math, Statistic and Computer Science (it was here that I realized my passion about data and programming).
 
