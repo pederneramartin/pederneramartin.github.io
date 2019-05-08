@@ -2,6 +2,9 @@
 title: About
 layout: page
 ---
+
+<h1>About Me</h1>
+
 Hi, I’m Martin.
 
 I hail in Rosario, Argentina. Though, I have lived two years in Buenos Aires, Argentina (the capital city)
