@@ -10,9 +10,9 @@ image:
 headerImage: False
 projects: true
 hidden: false # don't count this post in blog pagination
-description: "Web Scraping using Selenium."
+description: "Using selenium library to scrape data from ecommerce sites"
 category: project
-author: johndoe
+author: pederneramartin
 externalLink: false
 ---
 
