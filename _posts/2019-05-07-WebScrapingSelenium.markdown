@@ -10,7 +10,7 @@ image:
 headerImage: False
 projects: true
 hidden: false # don't count this post in blog pagination
-description: "Using selenium library to scrape data from ecommerce sites"
+description: "Using selenium library to scrape data from ecommerce sites."
 category: project
 author: pederneramartin
 externalLink: false
