@@ -7,13 +7,13 @@ layout: page
 
 Hi, I’m Martin.
 
-I hail from Rosario, Argentina. Though, I have lived two years in Buenos Aires, Argentina.
+I hail from Rosario, Argentina. Though, I've spent two years in Buenos Aires, Argentina where I worked as BI Analyst.
 
 I currently live in Dublin, doing a 3-month English course and in the pursuit of my first professional experience as a data scienctist.
 
-I have completed a degree in Industrial Engineering (Bachelor of Engineering + Master of Science in Industrial Engineering) with an excellent background in Math, Statistic and Computer Science (it was here that I realized my passion about data and programming).
+I've completed a Master degree in Industrial Engineering with an excellent background in Math, Statistic and Computer Science (it was here that I realized my passion about data and programming).
 
-In the past, I have worked in different positions such as BI analyst, director manager, quality management intern and production and maintenance intern, and also in different fields like ecommerce, brewery and steel factory. Although I have never had the possibility to work as a Data Scientist, in most of them I have developed and applied projects related to it.
+In the past, I've worked in different positions such as BI analyst, director manager, quality management intern and production and maintenance intern, and also in different fields like ecommerce, brewery and steel factory. Although I've never had the possibility to work as a Data Scientist, in most of them I've developed and applied projects related to it.
 
 <hr>
 
