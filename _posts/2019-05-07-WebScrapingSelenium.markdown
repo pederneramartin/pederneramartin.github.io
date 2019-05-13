@@ -36,7 +36,7 @@ I built a web scraping program that scraped differents ecommerce sites and get d
 * Stars
 * Ranking
 
-### What lenguages/packages did I use?
+### What languages/packages did I use?
 
 For this project I used Python3.x, and the following packages/libraries and drivers:
 
