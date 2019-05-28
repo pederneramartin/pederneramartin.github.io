@@ -25,21 +25,20 @@
     <meta property="og:type" content="profile">
 
     <!-- Begin Jekyll SEO tag v2.5.0 -->
-<title>Markdown Extra Components | Martin Pedernera</title>
+<title>Predicting house prices using Linear Regression | Martin Pedernera</title>
 <meta name="generator" content="Jekyll v3.8.5" />
-<meta property="og:title" content="Markdown Extra Components" />
-<meta name="author" content="jamesfoster" />
+<meta property="og:title" content="Predicting house prices using Linear Regression" />
+<meta name="author" content="pederneramartin" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Markdown summary with different options" />
-<meta property="og:description" content="Markdown summary with different options" />
-<link rel="canonical" href="http://localhost:4000/markdown-extra-components/" />
-<meta property="og:url" content="http://localhost:4000/markdown-extra-components/" />
+<meta name="description" content="Building a model to predict house prices with a high predective accuracy" />
+<meta property="og:description" content="Building a model to predict house prices with a high predective accuracy" />
+<link rel="canonical" href="http://localhost:4000/Predicting-House-Prices-Using-Linear-Regression/" />
+<meta property="og:url" content="http://localhost:4000/Predicting-House-Prices-Using-Linear-Regression/" />
 <meta property="og:site_name" content="Martin Pedernera" />
-<meta property="og:image" content="http://localhost:4000/assets/images/markdown.jpg" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2016-02-24T22:48:00+00:00" />
+<meta property="article:published_time" content="2019-05-28T18:30:00+01:00" />
 <script type="application/ld+json">
-{"description":"Markdown summary with different options","author":{"@type":"Person","name":"jamesfoster"},"@type":"BlogPosting","url":"http://localhost:4000/markdown-extra-components/","image":"http://localhost:4000/assets/images/markdown.jpg","headline":"Markdown Extra Components","dateModified":"2016-02-24T22:48:00+00:00","datePublished":"2016-02-24T22:48:00+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/markdown-extra-components/"},"@context":"http://schema.org"}</script>
+{"description":"Building a model to predict house prices with a high predective accuracy","author":{"@type":"Person","name":"pederneramartin"},"@type":"BlogPosting","url":"http://localhost:4000/Predicting-House-Prices-Using-Linear-Regression/","headline":"Predicting house prices using Linear Regression","dateModified":"2019-05-28T18:30:00+01:00","datePublished":"2019-05-28T18:30:00+01:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/Predicting-House-Prices-Using-Linear-Regression/"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
     
@@ -65,7 +64,7 @@
 <meta name="msapplication-square310x310logo" content="mstile-310x310.png" />
 
 
-    <link rel="canonical" href="http://localhost:4000/markdown-extra-components/">
+    <link rel="canonical" href="http://localhost:4000/Predicting-House-Prices-Using-Linear-Regression/">
     <link rel="alternate" type="application/rss+xml" title="" href="http://localhost:4000/feed.xml" />
 
     <style>
@@ -2533,15 +2532,15 @@ button.close { padding: 0; cursor: pointer; background: transparent; border: 0; 
 
 
 
-<h1 class="title">Markdown Extra Components</h1>
+<h1 class="title">Predicting house prices using Linear Regression</h1>
 
 <span class="date">
-    <time datetime="24-02-2016">Wednesday. February 24, 2016</time>
+    <time datetime="28-05-2019">Tuesday. May 28, 2019</time>
      - <span class="reading-time" title="Estimated read time">
     
 
     
-        5 mins
+        29 mins
     
 </span>
 
@@ -2550,185 +2549,1257 @@ button.close { padding: 0; cursor: pointer; background: transparent; border: 0; 
 
     <div class="post-tags">
         
-            <a class="item" href="http://localhost:4000/tags/#markdown">markdown</a>
+            <a class="item" href="http://localhost:4000/tags/#python">python</a>
         
-            <a class="item" href="http://localhost:4000/tags/#components">components</a>
+            <a class="item" href="http://localhost:4000/tags/#pandas">pandas</a>
         
-            <a class="item" href="http://localhost:4000/tags/#extra">extra</a>
+            <a class="item" href="http://localhost:4000/tags/#numpy">numpy</a>
+        
+            <a class="item" href="http://localhost:4000/tags/#matplotlib">matplotlib</a>
+        
+            <a class="item" href="http://localhost:4000/tags/#seaborn">seaborn</a>
+        
+            <a class="item" href="http://localhost:4000/tags/#scipy">scipy</a>
+        
+            <a class="item" href="http://localhost:4000/tags/#scikit-learn">scikit-learn</a>
         
     </div>
 
 
-<h2 id="summary">Summary:</h2>
+<h1 id="predicting-house-prices-using-linear-regression">Predicting House Prices Using Linear Regression</h1>
 
-<p>You can pick as item to see how to apply in markdown.</p>
+<p>This challange is part of a Kaggle Competition. More info can be found <a href="https://www.kaggle.com/c/house-prices-advanced-regression-techniques/overview">here</a></p>
 
-<h4 id="especial-elements">Especial Elements</h4>
+<p>The problem is to build a model that will predict house prices with a high degree of predictive accuracy given the available data. “With 79 explanatory variables describing (almost) every aspect of residential homes in Ames, Iowa, this competition challenges you to predict the final price of each home.”</p>
+
+<h2 id="dataset">Dataset</h2>
+
+<p>The dataset is the prices and features of residential houses sold from 2006 to 2010 in Ames, Iowa. Obtained from <a href="https://www.kaggle.com/c/house-prices-advanced-regression-techniques/data">here</a></p>
+
+<h2 id="environment-and-tools">Environment and tools</h2>
+
 <ul>
-  <li><a href="#evidence">Evidence</a></li>
-  <li><a href="#side-by-side">Side-by-Side</a></li>
-  <li><a href="#star">Star</a></li>
-  <li><a href="#especial-breaker">Especial Breaker</a></li>
-  <li><a href="#spoiler">Spoiler</a></li>
+  <li>Jupyter notebook</li>
+  <li>numpy</li>
+  <li>pandas</li>
+  <li>seaborn</li>
+  <li>matplotlib</li>
+  <li>scipy</li>
+  <li>scikit-learn</li>
 </ul>
 
-<h4 id="external-elements">External Elements</h4>
+<h3 id="import-libraries">Import libraries</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="n">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="n">sns</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">stats</span>
+<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">skew</span><span class="p">,</span><span class="n">norm</span><span class="p">,</span><span class="n">kurtosis</span>
+<span class="kn">from</span> <span class="nn">scipy.stats.stats</span> <span class="kn">import</span> <span class="n">pearsonr</span>
+<span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
+</code></pre></div></div>
+
+<h3 id="import-dataset">Import dataset</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">train</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">"train.csv"</span><span class="p">)</span>
+<span class="n">test</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">"test.csv"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="drop-id-column">Drop Id column</h3>
+
+<p>Drop the ‘Id’ column in the data as it is not necessary for prediction</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">train_id</span> <span class="o">=</span> <span class="n">train</span><span class="p">[</span><span class="s">"Id"</span><span class="p">]</span>
+<span class="n">test_id</span> <span class="o">=</span> <span class="n">test</span><span class="p">[</span><span class="s">"Id"</span><span class="p">]</span>
+
+<span class="n">train</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s">"Id"</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">test</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s">"Id"</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="exploring-the-data">Exploring the data</h2>
+
+<p>The test data doesn’t have the target variable which is the ‘SalePrice’.</p>
+
+<p>Here is a data <a href="https://www.kaggle.com/c/house-prices-advanced-regression-techniques/download/data_description.txt">description file</a></p>
 <ul>
-  <li><a href="#gist">Gist</a></li>
-  <li><a href="#codepen">Codepen</a></li>
-  <li><a href="#slideshare">Slideshare</a></li>
-  <li><a href="#videos">Videos</a></li>
+  <li>SalePrice — the property’s sale price in dollars. This is the target variable that you’re trying to predict.</li>
+  <li>LotArea: Lot size in square feet</li>
+  <li>Neighborhood: Physical locations within Ames city limits</li>
+  <li>OverallQual: Overall material and finish quality</li>
+  <li>OverallCond: Overall condition rating</li>
+  <li>YearBuilt: Original construction date</li>
+  <li>TotalBsmtSF: Total square feet of basement area</li>
+  <li>GrLivArea: Above grade (ground) living area square feet</li>
+  <li>….</li>
 </ul>
 
-<hr />
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">train</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</code></pre></div></div>
 
-<h2 id="evidence">Evidence</h2>
-
-<p>You can try the evidence!</p>
-
-<p><span class="evidence">Paragraphs can be written like so. A paragraph is the basic block of Markdown. A paragraph is what text will turn into when there is no reason it should become anything else.</span></p>
-
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"evidence"</span><span class="nt">&gt;</span>Paragraphs can be written like so. A paragraph is the basic block of Markdown. A paragraph is what text will turn into when there is no reason it should become anything else.<span class="nt">&lt;/span&gt;</span></code></pre></figure>
-
-<hr />
-
-<h2 id="side-by-side">Side-by-side</h2>
-
-<p>Like the <a href="https://medium.com/">Medium</a> component.</p>
-
-<p><strong>Image</strong> on the left and <strong>Text</strong> on the right:</p>
-
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"side-by-side"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"toleft"</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"image"</span> <span class="na">src=</span><span class="s">"http://localhost:4000/assets/images/profile.jpg"</span> <span class="na">alt=</span><span class="s">"Alt Text"</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;figcaption</span> <span class="na">class=</span><span class="s">"caption"</span><span class="nt">&gt;</span>Photo by John Doe<span class="nt">&lt;/figcaption&gt;</span>
-    <span class="nt">&lt;/div&gt;</span>
-
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"toright"</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;p&gt;</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<span class="nt">&lt;/p&gt;</span>
-    <span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;/div&gt;</span></code></pre></figure>
-
-<div class="side-by-side">
-    <div class="toleft">
-        <img class="image" src="http://localhost:4000/assets/images/profile.jpg" alt="Alt Text" />
-        <figcaption class="caption">Photo by John Doe</figcaption>
-    </div>
-
-    <div class="toright">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    </div>
+<div style="overflow-x:auto; text-align: center">
+<style type="text/css">
+table.padded-table th { padding:10px; }
+</style>
+<table class="table-striped padded-table">
+  <thead>
+    <tr style="text-align: center;">
+      <th></th>
+      <th>MSSubClass</th>
+      <th>LotFrontage</th>
+      <th>LotArea</th>
+      <th>OverallQual</th>
+      <th>OverallCond</th>
+      <th>YearBuilt</th>
+      <th>YearRemodAdd</th>
+      <th>MasVnrArea</th>
+      <th>BsmtFinSF1</th>
+      <th>BsmtFinSF2</th>
+      <th>...</th>
+      <th>WoodDeckSF</th>
+      <th>OpenPorchSF</th>
+      <th>EnclosedPorch</th>
+      <th>3SsnPorch</th>
+      <th>ScreenPorch</th>
+      <th>PoolArea</th>
+      <th>MiscVal</th>
+      <th>MoSold</th>
+      <th>YrSold</th>
+      <th>SalePrice</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>1460.000000</td>
+      <td>1201.000000</td>
+      <td>1460.000000</td>
+      <td>1460.000000</td>
+      <td>1460.000000</td>
+      <td>1460.000000</td>
+      <td>1460.000000</td>
+      <td>1452.000000</td>
+      <td>1460.000000</td>
+      <td>1460.000000</td>
+      <td>...</td>
+      <td>1460.000000</td>
+      <td>1460.000000</td>
+      <td>1460.000000</td>
+      <td>1460.000000</td>
+      <td>1460.000000</td>
+      <td>1460.000000</td>
+      <td>1460.000000</td>
+      <td>1460.000000</td>
+      <td>1460.000000</td>
+      <td>1460.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>56.897260</td>
+      <td>70.049958</td>
+      <td>10516.828082</td>
+      <td>6.099315</td>
+      <td>5.575342</td>
+      <td>1971.267808</td>
+      <td>1984.865753</td>
+      <td>103.685262</td>
+      <td>443.639726</td>
+      <td>46.549315</td>
+      <td>...</td>
+      <td>94.244521</td>
+      <td>46.660274</td>
+      <td>21.954110</td>
+      <td>3.409589</td>
+      <td>15.060959</td>
+      <td>2.758904</td>
+      <td>43.489041</td>
+      <td>6.321918</td>
+      <td>2007.815753</td>
+      <td>180921.195890</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>42.300571</td>
+      <td>24.284752</td>
+      <td>9981.264932</td>
+      <td>1.382997</td>
+      <td>1.112799</td>
+      <td>30.202904</td>
+      <td>20.645407</td>
+      <td>181.066207</td>
+      <td>456.098091</td>
+      <td>161.319273</td>
+      <td>...</td>
+      <td>125.338794</td>
+      <td>66.256028</td>
+      <td>61.119149</td>
+      <td>29.317331</td>
+      <td>55.757415</td>
+      <td>40.177307</td>
+      <td>496.123024</td>
+      <td>2.703626</td>
+      <td>1.328095</td>
+      <td>79442.502883</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>20.000000</td>
+      <td>21.000000</td>
+      <td>1300.000000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>1872.000000</td>
+      <td>1950.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>1.000000</td>
+      <td>2006.000000</td>
+      <td>34900.000000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>20.000000</td>
+      <td>59.000000</td>
+      <td>7553.500000</td>
+      <td>5.000000</td>
+      <td>5.000000</td>
+      <td>1954.000000</td>
+      <td>1967.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>5.000000</td>
+      <td>2007.000000</td>
+      <td>129975.000000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>50.000000</td>
+      <td>69.000000</td>
+      <td>9478.500000</td>
+      <td>6.000000</td>
+      <td>5.000000</td>
+      <td>1973.000000</td>
+      <td>1994.000000</td>
+      <td>0.000000</td>
+      <td>383.500000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>25.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>6.000000</td>
+      <td>2008.000000</td>
+      <td>163000.000000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>70.000000</td>
+      <td>80.000000</td>
+      <td>11601.500000</td>
+      <td>7.000000</td>
+      <td>6.000000</td>
+      <td>2000.000000</td>
+      <td>2004.000000</td>
+      <td>166.000000</td>
+      <td>712.250000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>168.000000</td>
+      <td>68.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>8.000000</td>
+      <td>2009.000000</td>
+      <td>214000.000000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>190.000000</td>
+      <td>313.000000</td>
+      <td>215245.000000</td>
+      <td>10.000000</td>
+      <td>9.000000</td>
+      <td>2010.000000</td>
+      <td>2010.000000</td>
+      <td>1600.000000</td>
+      <td>5644.000000</td>
+      <td>1474.000000</td>
+      <td>...</td>
+      <td>857.000000</td>
+      <td>547.000000</td>
+      <td>552.000000</td>
+      <td>508.000000</td>
+      <td>480.000000</td>
+      <td>738.000000</td>
+      <td>15500.000000</td>
+      <td>12.000000</td>
+      <td>2010.000000</td>
+      <td>755000.000000</td>
+    </tr>
+  </tbody>
+</table>
+<p>8 rows × 37 columns</p>
 </div>
 
-<p><strong>Text</strong> on the left and <strong>Image</strong> on the right:</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">test</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</code></pre></div></div>
 
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"side-by-side"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"toleft"</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;p&gt;</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<span class="nt">&lt;/p&gt;</span>
-    <span class="nt">&lt;/div&gt;</span>
-
-    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"toright"</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;img</span> <span class="na">class=</span><span class="s">"image"</span> <span class="na">src=</span><span class="s">"http://localhost:4000/assets/images/profile.jpg"</span> <span class="na">alt=</span><span class="s">"Alt Text"</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;figcaption</span> <span class="na">class=</span><span class="s">"caption"</span><span class="nt">&gt;</span>Photo by John Doe<span class="nt">&lt;/figcaption&gt;</span>
-    <span class="nt">&lt;/div&gt;</span>
-<span class="nt">&lt;/div&gt;</span></code></pre></figure>
-
-<div class="side-by-side">
-    <div class="toleft">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    </div>
-
-    <div class="toright">
-        <img class="image" src="http://localhost:4000/assets/images/profile.jpg" alt="Alt Text" />
-        <figcaption class="caption">Photo by John Doe</figcaption>
-    </div>
+<div style="overflow-x:auto; text-align: center">
+<style type="text/css">
+table.padded-table th { padding:10px; }
+</style>
+<table class="table-striped padded-table">
+  <thead>
+    <tr style="text-align: center;">
+      <th></th>
+      <th>MSSubClass</th>
+      <th>LotFrontage</th>
+      <th>LotArea</th>
+      <th>OverallQual</th>
+      <th>OverallCond</th>
+      <th>YearBuilt</th>
+      <th>YearRemodAdd</th>
+      <th>MasVnrArea</th>
+      <th>BsmtFinSF1</th>
+      <th>BsmtFinSF2</th>
+      <th>...</th>
+      <th>GarageArea</th>
+      <th>WoodDeckSF</th>
+      <th>OpenPorchSF</th>
+      <th>EnclosedPorch</th>
+      <th>3SsnPorch</th>
+      <th>ScreenPorch</th>
+      <th>PoolArea</th>
+      <th>MiscVal</th>
+      <th>MoSold</th>
+      <th>YrSold</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>1459.000000</td>
+      <td>1232.000000</td>
+      <td>1459.000000</td>
+      <td>1459.000000</td>
+      <td>1459.000000</td>
+      <td>1459.000000</td>
+      <td>1459.000000</td>
+      <td>1444.000000</td>
+      <td>1458.000000</td>
+      <td>1458.000000</td>
+      <td>...</td>
+      <td>1458.000000</td>
+      <td>1459.000000</td>
+      <td>1459.000000</td>
+      <td>1459.000000</td>
+      <td>1459.000000</td>
+      <td>1459.000000</td>
+      <td>1459.000000</td>
+      <td>1459.000000</td>
+      <td>1459.000000</td>
+      <td>1459.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>57.378341</td>
+      <td>68.580357</td>
+      <td>9819.161069</td>
+      <td>6.078821</td>
+      <td>5.553804</td>
+      <td>1971.357779</td>
+      <td>1983.662783</td>
+      <td>100.709141</td>
+      <td>439.203704</td>
+      <td>52.619342</td>
+      <td>...</td>
+      <td>472.768861</td>
+      <td>93.174777</td>
+      <td>48.313914</td>
+      <td>24.243317</td>
+      <td>1.794380</td>
+      <td>17.064428</td>
+      <td>1.744345</td>
+      <td>58.167923</td>
+      <td>6.104181</td>
+      <td>2007.769705</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>42.746880</td>
+      <td>22.376841</td>
+      <td>4955.517327</td>
+      <td>1.436812</td>
+      <td>1.113740</td>
+      <td>30.390071</td>
+      <td>21.130467</td>
+      <td>177.625900</td>
+      <td>455.268042</td>
+      <td>176.753926</td>
+      <td>...</td>
+      <td>217.048611</td>
+      <td>127.744882</td>
+      <td>68.883364</td>
+      <td>67.227765</td>
+      <td>20.207842</td>
+      <td>56.609763</td>
+      <td>30.491646</td>
+      <td>630.806978</td>
+      <td>2.722432</td>
+      <td>1.301740</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>20.000000</td>
+      <td>21.000000</td>
+      <td>1470.000000</td>
+      <td>1.000000</td>
+      <td>1.000000</td>
+      <td>1879.000000</td>
+      <td>1950.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>1.000000</td>
+      <td>2006.000000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>20.000000</td>
+      <td>58.000000</td>
+      <td>7391.000000</td>
+      <td>5.000000</td>
+      <td>5.000000</td>
+      <td>1953.000000</td>
+      <td>1963.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>318.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>4.000000</td>
+      <td>2007.000000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>50.000000</td>
+      <td>67.000000</td>
+      <td>9399.000000</td>
+      <td>6.000000</td>
+      <td>5.000000</td>
+      <td>1973.000000</td>
+      <td>1992.000000</td>
+      <td>0.000000</td>
+      <td>350.500000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>480.000000</td>
+      <td>0.000000</td>
+      <td>28.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>6.000000</td>
+      <td>2008.000000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>70.000000</td>
+      <td>80.000000</td>
+      <td>11517.500000</td>
+      <td>7.000000</td>
+      <td>6.000000</td>
+      <td>2001.000000</td>
+      <td>2004.000000</td>
+      <td>164.000000</td>
+      <td>753.500000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>576.000000</td>
+      <td>168.000000</td>
+      <td>72.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>8.000000</td>
+      <td>2009.000000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>190.000000</td>
+      <td>200.000000</td>
+      <td>56600.000000</td>
+      <td>10.000000</td>
+      <td>9.000000</td>
+      <td>2010.000000</td>
+      <td>2010.000000</td>
+      <td>1290.000000</td>
+      <td>4010.000000</td>
+      <td>1526.000000</td>
+      <td>...</td>
+      <td>1488.000000</td>
+      <td>1424.000000</td>
+      <td>742.000000</td>
+      <td>1012.000000</td>
+      <td>360.000000</td>
+      <td>576.000000</td>
+      <td>800.000000</td>
+      <td>17000.000000</td>
+      <td>12.000000</td>
+      <td>2010.000000</td>
+    </tr>
+  </tbody>
+</table>
+<p>8 rows × 36 columns</p>
 </div>
 
-<hr />
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#Shape of train and test dataset</span>
 
-<h2 id="star">Star</h2>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">"Train shape: {train.shape}"</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">"Test shape: {test.shape}"</span><span class="p">)</span>
+</code></pre></div></div>
 
-<p>You can give evidence to a post. Just add the tag to the markdown file.</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Train shape: (1460, 80)
+Test shape: (1459, 79)
+</code></pre></div></div>
 
-<figure class="highlight"><pre><code class="language-raw" data-lang="raw">star: true</code></pre></figure>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#Select the Numerical &amp; Categorical Features</span>
 
-<hr />
+<span class="n">numerical_features</span> <span class="o">=</span> <span class="n">train</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="n">exclude</span> <span class="o">=</span> <span class="p">[</span><span class="s">'object'</span><span class="p">])</span><span class="o">.</span><span class="n">columns</span>
+<span class="n">categorical_features</span> <span class="o">=</span> <span class="n">train</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="n">include</span> <span class="o">=</span> <span class="p">[</span><span class="s">'object'</span><span class="p">])</span><span class="o">.</span><span class="n">columns</span>
+</code></pre></div></div>
 
-<h2 id="especial-breaker">Especial Breaker</h2>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Plotting the numerical columns</span>
 
-<p>You can add a especial <em>hr</em> to your text.</p>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">15</span><span class="p">))</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span>
+<span class="n">train</span><span class="p">[</span><span class="n">numerical_features</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
 
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"breaker"</span><span class="nt">&gt;&lt;/div&gt;</span></code></pre></figure>
+<p><img src="/assets/images/Predicting-House-Prices-Using-Linear-Regression/output_21_1.png" alt="png" /></p>
 
-<div class="breaker"></div>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#Plot the Numeric columns against SalePrice Using ScatterPlot</span>
 
-<hr />
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">30</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">col</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">numerical_features</span><span class="p">[</span><span class="mi">1</span><span class="p">:]):</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="o">+</span><span class="n">i</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">train</span><span class="p">[</span><span class="n">col</span><span class="p">],</span> <span class="n">train</span><span class="p">[</span><span class="s">'SalePrice'</span><span class="p">])</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="n">col</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">'SalePrice'</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
 
-<h2 id="spoiler">Spoiler</h2>
+<p><img src="/assets/images/Predicting-House-Prices-Using-Linear-Regression/output_22_1.png" alt="png" /></p>
 
-<p>You can add an especial hidden content that appears on hover.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#Use bar plots to plot categorical features against SalePrice</span>
 
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"spoiler"</span><span class="nt">&gt;&lt;p&gt;</span>your content<span class="nt">&lt;/p&gt;&lt;/div&gt;</span></code></pre></figure>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">50</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">col</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">categorical_features</span><span class="p">):</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="o">+</span><span class="n">i</span><span class="p">)</span>
+    <span class="n">train</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">col</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()[</span><span class="s">'SalePrice'</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">yerr</span> <span class="o">=</span> <span class="n">train</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">col</span><span class="p">)</span><span class="o">.</span><span class="n">std</span><span class="p">())</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
 
-<div class="spoiler"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>
+<p><img src="/assets/images/Predicting-House-Prices-Using-Linear-Regression/output_23_1.png" alt="png" /></p>
 
-<hr />
+<h2 id="data-preprocessing">Data Preprocessing</h2>
 
-<h2 id="gist">Gist</h2>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sns</span><span class="o">.</span><span class="n">set_style</span><span class="p">(</span><span class="s">'darkgrid'</span><span class="p">)</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">regplot</span><span class="p">(</span><span class="n">train</span><span class="p">[</span><span class="s">'GrLivArea'</span><span class="p">],</span> <span class="n">train</span><span class="p">[</span><span class="s">'SalePrice'</span><span class="p">])</span>
+<span class="c">#ax.scatter(x = train['GrLivArea'], y = train['SalePrice'])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">'SalePrice'</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">13</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">'GrLivArea'</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">13</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
 
-<p>You can add Gists from github.</p>
+<p><img src="/assets/images/Predicting-House-Prices-Using-Linear-Regression/output_25_0.png" alt="png" /></p>
 
-<figure class="highlight"><pre><code class="language-raw" data-lang="raw">{ % gist sergiokopplin/91ff4220480727b47224245ee2e9c291 % }</code></pre></figure>
+<p>We can see at the bottom right two with extremely large GrLivArea that are of a low price. These values are huge oultliers. Therefore, we can safely delete them.</p>
 
-<script src="https://gist.github.com/sergiokopplin/91ff4220480727b47224245ee2e9c291.js"> </script>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#Deleting outliers</span>
 
-<hr />
+<span class="n">train</span> <span class="o">=</span> <span class="n">train</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">train</span><span class="p">[(</span><span class="n">train</span><span class="p">[</span><span class="s">'GrLivArea'</span><span class="p">]</span><span class="o">&gt;</span><span class="mi">4000</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">train</span><span class="p">[</span><span class="s">'SalePrice'</span><span class="p">]</span><span class="o">&lt;</span><span class="mi">300000</span><span class="p">)]</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+</code></pre></div></div>
 
-<h2 id="codepen">Codepen</h2>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">regplot</span><span class="p">(</span><span class="n">train</span><span class="p">[</span><span class="s">'GrLivArea'</span><span class="p">],</span> <span class="n">train</span><span class="p">[</span><span class="s">'SalePrice'</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">'SalePrice'</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">13</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">'GrLivArea'</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">13</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
 
-<p>You can add Pens from Codepen.</p>
+<p><img src="/assets/images/Predicting-House-Prices-Using-Linear-Regression/output_28_0.png" alt="png" /></p>
 
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;p</span> <span class="na">data-height=</span><span class="s">"268"</span> <span class="na">data-theme-id=</span><span class="s">"0"</span> <span class="na">data-slug-hash=</span><span class="s">"gfdDu"</span> <span class="na">data-default-tab=</span><span class="s">"result"</span> <span class="na">data-user=</span><span class="s">"chriscoyier"</span> <span class="na">class=</span><span class="s">'codepen'</span><span class="nt">&gt;</span>
-    See the Pen <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">'http://codepen.io/chriscoyier/pen/gfdDu/'</span><span class="nt">&gt;</span>Crappy Recreation of the Book Cover of *The Flame Alphabet*<span class="nt">&lt;/a&gt;</span> by Chris Coyier (<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">'http://codepen.io/chriscoyier'</span><span class="nt">&gt;</span>@chriscoyier<span class="nt">&lt;/a&gt;</span>) on <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">'http://codepen.io'</span><span class="nt">&gt;</span>CodePen<span class="nt">&lt;/a&gt;</span>.
-<span class="nt">&lt;/p&gt;</span>
-<span class="nt">&lt;script </span><span class="na">async</span> <span class="na">src=</span><span class="s">"//assets.codepen.io/assets/embed/ei.js"</span><span class="nt">&gt;&lt;/script&gt;</span></code></pre></figure>
+<h3 id="sales-price-tragert-variable">Sales Price Tragert Variable</h3>
 
-<p data-height="268" data-theme-id="0" data-slug-hash="gfdDu" data-default-tab="result" data-user="chriscoyier" class="codepen">See the Pen <a href="http://codepen.io/chriscoyier/pen/gfdDu/">Crappy Recreation of the Book Cover of *The Flame Alphabet*</a> by Chris Coyier (<a href="http://codepen.io/chriscoyier">@chriscoyier</a>) on <a href="http://codepen.io">CodePen</a>.</p>
-<script async="" src="//assets.codepen.io/assets/embed/ei.js"></script>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">train</span><span class="p">[</span><span class="s">"SalePrice"</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</code></pre></div></div>
 
-<hr />
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>count      1458.000000
+mean     180932.919067
+std       79495.055285
+min       34900.000000
+25%      129925.000000
+50%      163000.000000
+75%      214000.000000
+max      755000.000000
+Name: SalePrice, dtype: float64
+</code></pre></div></div>
 
-<h2 id="slideshare">Slideshare</h2>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sns</span><span class="o">.</span><span class="n">distplot</span><span class="p">(</span><span class="n">train</span><span class="p">[</span><span class="s">"SalePrice"</span><span class="p">],</span><span class="n">fit</span><span class="o">=</span><span class="n">norm</span><span class="p">)</span>
+</code></pre></div></div>
+<p><img src="/assets/images/Predicting-House-Prices-Using-Linear-Regression/output_31_1.png" alt="png" /></p>
 
-<p>Add your presentations here!</p>
+<p>The target variable is right skewed. As (linear) models love normally distributed data , we need to transform this variable and make it more normally distributed.</p>
 
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;iframe</span> <span class="na">src=</span><span class="s">"//www.slideshare.net/slideshow/embed_code/key/hqDhSJoWkrHe7l"</span> <span class="na">width=</span><span class="s">"560"</span> <span class="na">height=</span><span class="s">"310"</span> <span class="na">frameborder=</span><span class="s">"0"</span> <span class="na">marginwidth=</span><span class="s">"0"</span> <span class="na">marginheight=</span><span class="s">"0"</span> <span class="na">scrolling=</span><span class="s">"no"</span> <span class="na">style=</span><span class="s">"border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;"</span> <span class="na">allowfullscreen</span><span class="nt">&gt;</span> <span class="nt">&lt;/iframe&gt;</span></code></pre></figure>
+<p>The need for data transformation can depend on the modeling method that you plan to use. For linear and logistic regression, for example, you ideally want to make sure that the relationship between input variables and output variables is approximately linear, that the input variables are approximately normal in distribution, and that the output variable is constant variance (that is, the variance of the output variable is independent of the input variables). 
+We need to transform some of our input variables to better meet these assumptions.</p>
 
-<iframe src="//www.slideshare.net/slideshow/embed_code/key/hqDhSJoWkrHe7l" width="560" height="310" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen=""> </iframe>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">stats</span><span class="o">.</span><span class="n">probplot</span><span class="p">(</span><span class="n">train</span><span class="p">[</span><span class="s">"SalePrice"</span><span class="p">],</span> <span class="n">plot</span><span class="o">=</span><span class="n">sns</span><span class="o">.</span><span class="n">mpl</span><span class="o">.</span><span class="n">pyplot</span><span class="p">)</span>
+</code></pre></div></div>
 
-<hr />
+<p><img src="/assets/images/Predicting-House-Prices-Using-Linear-Regression/output_33_1.png" alt="png" /></p>
 
-<h2 id="videos">Videos</h2>
+<p>The SalePrice deviates from normal distribution and is positively biased.</p>
 
-<p>Do you want some videos? Youtube, Vimeo or Vevo? Copy the embed code and paste on your post!</p>
+<p>The SalePrice also does not align with the diagonal line which represent normal distribution in normal probability graph. A normal probability plot of a normal distribution should look fairly straight, at least when the few large and small values are ignored.</p>
 
-<p><strong>Example</strong></p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">skewness</span> <span class="o">=</span> <span class="n">skew</span><span class="p">(</span><span class="n">train</span><span class="p">[</span><span class="s">"SalePrice"</span><span class="p">])</span>
+<span class="n">kurtosis</span> <span class="o">=</span> <span class="n">train</span><span class="p">[</span><span class="s">"SalePrice"</span><span class="p">]</span><span class="o">.</span><span class="n">kurt</span><span class="p">()</span>
 
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;iframe</span> <span class="na">width=</span><span class="s">"560"</span> <span class="na">height=</span><span class="s">"310"</span> <span class="na">src=</span><span class="s">"https://www.youtube.com/embed/r7XhWUDj-Ts"</span> <span class="na">frameborder=</span><span class="s">"0"</span> <span class="na">allowfullscreen</span><span class="nt">&gt;&lt;/iframe&gt;</span></code></pre></figure>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">"skewness: {skewness}"</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="s">"kurtosis: {kurtosis}"</span><span class="p">)</span>
+</code></pre></div></div>
 
-<iframe width="560" height="310" src="https://www.youtube.com/embed/r7XhWUDj-Ts" frameborder="0" allowfullscreen=""></iframe>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>skewness: 1.8793604459195012
+kurtosis: 6.523066888485879
+</code></pre></div></div>
+
+<p><em>Skewness:</em>
+The term ‘skewness’ is used to mean the absence of symmetry from the mean of the dataset. Skewness is used to indicate the shape of the distribution of data. In a skewed distribution, the curve is extended to either left or right side. So, when the plot is extended towards the right side more, it denotes positive skewness. On the other hand, when the plot is stretched more towards the left direction, then it is called as negative skewness.</p>
+
+<p><em>Kurtosis:</em>
+In statistics, kurtosis is defined as the parameter of relative sharpness of the peak of the probability distribution curve. It is used to indicate the flatness or peakedness of the frequency distribution curve and measures the tails or outliers of the distribution. Positive kurtosis represents that the distribution is more peaked than the normal distribution, whereas negative kurtosis shows that the distribution is less peaked than the normal distribution.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">train</span><span class="p">[</span><span class="s">'SalePrice'</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log1p</span><span class="p">(</span><span class="n">train</span><span class="p">[</span><span class="s">'SalePrice'</span><span class="p">])</span>
+
+<span class="c">#Normal Distribution of New Sales Price</span>
+<span class="n">mu</span><span class="p">,</span> <span class="n">sigma</span> <span class="o">=</span> <span class="n">norm</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">train</span><span class="p">[</span><span class="s">'SalePrice'</span><span class="p">])</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"Mu : {:.2f}</span><span class="se">\n</span><span class="s">Sigma : {:.2f}"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">mu</span><span class="p">,</span><span class="n">sigma</span><span class="p">))</span>
+
+<span class="c">#Visualization</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">distplot</span><span class="p">(</span><span class="n">train</span><span class="p">[</span><span class="s">'SalePrice'</span><span class="p">],</span><span class="n">fit</span><span class="o">=</span><span class="n">norm</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s">'Normal dist. ($</span><span class="err">\</span><span class="s">mu=$ {:.2f} and $</span><span class="err">\</span><span class="s">Sigma=$ {:.2f})'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">mu</span><span class="p">,</span><span class="n">sigma</span><span class="p">)],</span><span class="n">loc</span> <span class="o">=</span> <span class="s">'best'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">'SalePrice Distribution'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">'Frequency'</span><span class="p">)</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">probplot</span><span class="p">(</span><span class="n">train</span><span class="p">[</span><span class="s">'SalePrice'</span><span class="p">],</span><span class="n">plot</span><span class="o">=</span><span class="n">plt</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Mu : 12.02
+Sigma : 0.40
+</code></pre></div></div>
+
+<p><img src="/assets/images/Predicting-House-Prices-Using-Linear-Regression/output_37_1.png" alt="png" /></p>
+
+<p><img src="/assets/images/Predicting-House-Prices-Using-Linear-Regression/output_37_2.png" alt="png" /></p>
+
+<p>The skew seems now corrected and the data appears more normally distributed.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">train_n</span> <span class="o">=</span> <span class="n">train</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">test_n</span> <span class="o">=</span> <span class="n">test</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">y_train</span> <span class="o">=</span> <span class="n">train</span><span class="p">[</span><span class="s">'SalePrice'</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">y_test</span> <span class="o">=</span> <span class="n">train</span><span class="p">[</span><span class="s">'SalePrice'</span><span class="p">]</span>
+<span class="n">all_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">((</span><span class="n">train</span><span class="p">,</span><span class="n">test</span><span class="p">),</span> <span class="n">sort</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)</span>
+<span class="n">all_data</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s">'SalePrice'</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"all_data size is : {}"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">all_data</span><span class="o">.</span><span class="n">shape</span><span class="p">))</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>all_data size is : (2917, 79)
+</code></pre></div></div>
+
+<h2 id="missing-data">Missing Data</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">all_data</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="nb">sum</span><span class="p">()</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>PoolQC           2908
+MiscFeature      2812
+Alley            2719
+Fence            2346
+FireplaceQu      1420
+LotFrontage       486
+GarageCond        159
+GarageQual        159
+GarageYrBlt       159
+GarageFinish      159
+GarageType        157
+BsmtCond           82
+BsmtExposure       82
+BsmtQual           81
+BsmtFinType2       80
+BsmtFinType1       79
+MasVnrType         24
+MasVnrArea         23
+MSZoning            4
+BsmtHalfBath        2
+Utilities           2
+Functional          2
+BsmtFullBath        2
+BsmtFinSF2          1
+BsmtFinSF1          1
+Exterior2nd         1
+BsmtUnfSF           1
+TotalBsmtSF         1
+Exterior1st         1
+SaleType            1
+                 ... 
+YearRemodAdd        0
+YearBuilt           0
+SaleCondition       0
+HeatingQC           0
+ExterQual           0
+ExterCond           0
+YrSold              0
+MoSold              0
+MiscVal             0
+PoolArea            0
+ScreenPorch         0
+3SsnPorch           0
+EnclosedPorch       0
+OpenPorchSF         0
+WoodDeckSF          0
+PavedDrive          0
+Fireplaces          0
+TotRmsAbvGrd        0
+KitchenAbvGr        0
+BedroomAbvGr        0
+HalfBath            0
+FullBath            0
+GrLivArea           0
+LowQualFinSF        0
+2ndFlrSF            0
+1stFlrSF            0
+CentralAir          0
+Heating             0
+Foundation          0
+MSSubClass          0
+Length: 79, dtype: int64
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">all_data_na_values</span> <span class="o">=</span> <span class="n">all_data</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="nb">sum</span><span class="p">()</span>
+<span class="n">all_data_na_values</span> <span class="o">=</span> <span class="n">all_data_na_values</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">all_data_na_values</span><span class="p">[</span><span class="n">all_data_na_values</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">index</span><span class="p">)</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="bp">False</span><span class="p">)[:</span><span class="mi">30</span><span class="p">]</span>
+<span class="n">all_data_na</span> <span class="o">=</span> <span class="p">(</span><span class="n">all_data</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="nb">sum</span><span class="p">()</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">all_data</span><span class="p">))</span> <span class="o">*</span> <span class="mi">100</span>
+<span class="n">all_data_na</span> <span class="o">=</span> <span class="n">all_data_na</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">all_data_na</span><span class="p">[</span><span class="n">all_data_na</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">index</span><span class="p">)</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="bp">False</span><span class="p">)[:</span><span class="mi">30</span><span class="p">]</span>
+<span class="n">missing_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s">'Missing Ratio'</span> <span class="p">:</span><span class="n">all_data_na</span><span class="p">,</span><span class="s">'Missing Values'</span> <span class="p">:</span><span class="n">all_data_na_values</span><span class="p">})</span>
+<span class="n">missing_data</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div style="overflow-x:auto; text-align: center">
+<style type="text/css">
+table.padded-table th { padding:10px; }
+</style>
+<table class="table-striped padded-table">
+  <thead>
+    <tr style="text-align: center;">
+      <th></th>
+      <th>Missing Ratio</th>
+      <th>Missing Values</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>PoolQC</th>
+      <td>99.691464</td>
+      <td>2908</td>
+    </tr>
+    <tr>
+      <th>MiscFeature</th>
+      <td>96.400411</td>
+      <td>2812</td>
+    </tr>
+    <tr>
+      <th>Alley</th>
+      <td>93.212204</td>
+      <td>2719</td>
+    </tr>
+    <tr>
+      <th>Fence</th>
+      <td>80.425094</td>
+      <td>2346</td>
+    </tr>
+    <tr>
+      <th>FireplaceQu</th>
+      <td>48.680151</td>
+      <td>1420</td>
+    </tr>
+    <tr>
+      <th>LotFrontage</th>
+      <td>16.660953</td>
+      <td>486</td>
+    </tr>
+    <tr>
+      <th>GarageFinish</th>
+      <td>5.450806</td>
+      <td>159</td>
+    </tr>
+    <tr>
+      <th>GarageYrBlt</th>
+      <td>5.450806</td>
+      <td>159</td>
+    </tr>
+    <tr>
+      <th>GarageQual</th>
+      <td>5.450806</td>
+      <td>159</td>
+    </tr>
+    <tr>
+      <th>GarageCond</th>
+      <td>5.450806</td>
+      <td>159</td>
+    </tr>
+    <tr>
+      <th>GarageType</th>
+      <td>5.382242</td>
+      <td>157</td>
+    </tr>
+    <tr>
+      <th>BsmtExposure</th>
+      <td>2.811107</td>
+      <td>82</td>
+    </tr>
+    <tr>
+      <th>BsmtCond</th>
+      <td>2.811107</td>
+      <td>82</td>
+    </tr>
+    <tr>
+      <th>BsmtQual</th>
+      <td>2.776826</td>
+      <td>81</td>
+    </tr>
+    <tr>
+      <th>BsmtFinType2</th>
+      <td>2.742544</td>
+      <td>80</td>
+    </tr>
+    <tr>
+      <th>BsmtFinType1</th>
+      <td>2.708262</td>
+      <td>79</td>
+    </tr>
+    <tr>
+      <th>MasVnrType</th>
+      <td>0.822763</td>
+      <td>24</td>
+    </tr>
+    <tr>
+      <th>MasVnrArea</th>
+      <td>0.788481</td>
+      <td>23</td>
+    </tr>
+    <tr>
+      <th>MSZoning</th>
+      <td>0.137127</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>BsmtFullBath</th>
+      <td>0.068564</td>
+      <td>2</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">12</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="s">'90'</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">all_data_na</span><span class="o">.</span><span class="n">index</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="n">all_data_na</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">'Features'</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">'Percent of Missing Values'</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s">'</span><span class="si">% </span><span class="s">of Misssing data by Features'</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><img src="/assets/images/Predicting-House-Prices-Using-Linear-Regression/output_43_1.png" alt="png" /></p>
+
+<h3 id="correlation-between-columns">Correlation between Columns</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#Correlation map to see how features are correlated with SalePrice</span>
+<span class="n">corrmat</span> <span class="o">=</span> <span class="n">train</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">25</span><span class="p">,</span><span class="mi">15</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">corrmat</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span> <span class="n">square</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">annot</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s">".2f"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><img src="/assets/images/Predicting-House-Prices-Using-Linear-Regression/output_45_1.png" alt="png" /></p>
+
+<p>From this we can tell which features (OverallQual, GrLivArea, GarageCars, GarageArea, and TotalBsmtSF)are highly positively correlated with the SalePrice.</p>
+
+<p>GarageCars and GarageArea have strongly correlation, TotalBsmtSF and 1stFlrSF have similarly high correlation. We can assum that the number of cars stored in a garage strongly depends on the area of the garage.</p>
+
+<h3 id="fill-the-missing-data">Fill The Missing Data</h3>
+
+<p>To try and understand what the missing values are, is important to see the data documentation. This will help us to transform features to reflect the assumptions we made. For Example, GarageArea is zero, indicates we don’t have a garage and cars should be transformed to 0 as well. We’ll also set mode value for missing entries and transform numerical features to categorical features. One other key feature that we’ll add is the Total surface area as TotalSF by adding together TotalBsmtSF, 1stFlrSF and 2ndFlrSF (since area related features are very important to determine house prices)</p>
+
+<p>We’ll also log transform highly skewed features using box cox transformation which is a way to transform non-normal dependent variables into a normal shape.</p>
+
+<p>This are 59 skewed features. Normality is an important assumption for many statistical techniques. In this case the data isn’t normal, applying a Box-Cox also increases the ability to run a broader number of tests. Go on to adding of dummy variables for categorical features.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Fill the Missing Values</span>
+
+<span class="n">all_data</span><span class="p">[</span><span class="s">'PoolQC'</span><span class="p">]</span> <span class="o">=</span> <span class="n">all_data</span><span class="p">[</span><span class="s">'PoolQC'</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="s">"None"</span><span class="p">)</span>
+<span class="n">all_data</span><span class="p">[</span><span class="s">'MiscFeature'</span><span class="p">]</span> <span class="o">=</span> <span class="n">all_data</span><span class="p">[</span><span class="s">'MiscFeature'</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="s">"None"</span><span class="p">)</span>
+<span class="n">all_data</span><span class="p">[</span><span class="s">"Alley"</span><span class="p">]</span> <span class="o">=</span> <span class="n">all_data</span><span class="p">[</span><span class="s">"Alley"</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="s">"None"</span><span class="p">)</span>
+<span class="n">all_data</span><span class="p">[</span><span class="s">"Fence"</span><span class="p">]</span> <span class="o">=</span> <span class="n">all_data</span><span class="p">[</span><span class="s">"Fence"</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="s">"None"</span><span class="p">)</span>
+<span class="n">all_data</span><span class="p">[</span><span class="s">"FireplaceQu"</span><span class="p">]</span> <span class="o">=</span> <span class="n">all_data</span><span class="p">[</span><span class="s">"FireplaceQu"</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="s">"None"</span><span class="p">)</span>
+<span class="n">all_data</span><span class="p">[</span><span class="s">"LotFrontage"</span><span class="p">]</span> <span class="o">=</span> <span class="n">all_data</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s">"Neighborhood"</span><span class="p">)[</span><span class="s">"LotFrontage"</span><span class="p">]</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">median</span><span class="p">()))</span>
+
+<span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="p">(</span><span class="s">'GarageType'</span><span class="p">,</span> <span class="s">'GarageFinish'</span><span class="p">,</span> <span class="s">'GarageQual'</span><span class="p">,</span> <span class="s">'GarageCond'</span><span class="p">):</span>
+    <span class="n">all_data</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="n">all_data</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="s">'None'</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="p">(</span><span class="s">'GarageYrBlt'</span><span class="p">,</span> <span class="s">'GarageArea'</span><span class="p">,</span> <span class="s">'GarageCars'</span><span class="p">):</span>
+    <span class="n">all_data</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="n">all_data</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    
+<span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="p">(</span><span class="s">'BsmtCond'</span><span class="p">,</span> <span class="s">'BsmtExposure'</span><span class="p">,</span> <span class="s">'BsmtQual'</span><span class="p">,</span> <span class="s">'BsmtFinType2'</span><span class="p">,</span> <span class="s">'BsmtFinType1'</span><span class="p">):</span>
+    <span class="n">all_data</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="n">all_data</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="s">'None'</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="p">(</span><span class="s">'BsmtHalfBath'</span><span class="p">,</span> <span class="s">'BsmtFullBath'</span><span class="p">,</span> <span class="s">'TotalBsmtSF'</span><span class="p">,</span> <span class="s">'BsmtUnfSF'</span><span class="p">,</span> <span class="s">'BsmtFinSF2'</span><span class="p">,</span> <span class="s">'BsmtFinSF1'</span><span class="p">):</span>
+    <span class="n">all_data</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="n">all_data</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="n">all_data</span><span class="p">[</span><span class="s">"MasVnrType"</span><span class="p">]</span> <span class="o">=</span> <span class="n">all_data</span><span class="p">[</span><span class="s">"MasVnrType"</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="s">"None"</span><span class="p">)</span>
+<span class="n">all_data</span><span class="p">[</span><span class="s">"MasVnrArea"</span><span class="p">]</span> <span class="o">=</span> <span class="n">all_data</span><span class="p">[</span><span class="s">"MasVnrArea"</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">all_data</span><span class="p">[</span><span class="s">'MSZoning'</span><span class="p">]</span> <span class="o">=</span> <span class="n">all_data</span><span class="p">[</span><span class="s">'MSZoning'</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">all_data</span><span class="p">[</span><span class="s">'MSZoning'</span><span class="p">]</span><span class="o">.</span><span class="n">mode</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">all_data</span> <span class="o">=</span> <span class="n">all_data</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s">'Utilities'</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">all_data</span><span class="p">[</span><span class="s">"Functional"</span><span class="p">]</span> <span class="o">=</span> <span class="n">all_data</span><span class="p">[</span><span class="s">"Functional"</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="s">"Typ"</span><span class="p">)</span>
+<span class="n">all_data</span><span class="p">[</span><span class="s">'Electrical'</span><span class="p">]</span> <span class="o">=</span> <span class="n">all_data</span><span class="p">[</span><span class="s">'Electrical'</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">all_data</span><span class="p">[</span><span class="s">'Electrical'</span><span class="p">]</span><span class="o">.</span><span class="n">mode</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">all_data</span><span class="p">[</span><span class="s">'KitchenQual'</span><span class="p">]</span> <span class="o">=</span> <span class="n">all_data</span><span class="p">[</span><span class="s">'KitchenQual'</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">all_data</span><span class="p">[</span><span class="s">'KitchenQual'</span><span class="p">]</span><span class="o">.</span><span class="n">mode</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">all_data</span><span class="p">[</span><span class="s">'Exterior1st'</span><span class="p">]</span> <span class="o">=</span> <span class="n">all_data</span><span class="p">[</span><span class="s">'Exterior1st'</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">all_data</span><span class="p">[</span><span class="s">'Exterior1st'</span><span class="p">]</span><span class="o">.</span><span class="n">mode</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">all_data</span><span class="p">[</span><span class="s">'Exterior2nd'</span><span class="p">]</span> <span class="o">=</span> <span class="n">all_data</span><span class="p">[</span><span class="s">'Exterior2nd'</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">all_data</span><span class="p">[</span><span class="s">'Exterior2nd'</span><span class="p">]</span><span class="o">.</span><span class="n">mode</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">all_data</span><span class="p">[</span><span class="s">'SaleType'</span><span class="p">]</span> <span class="o">=</span> <span class="n">all_data</span><span class="p">[</span><span class="s">'SaleType'</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">all_data</span><span class="p">[</span><span class="s">'SaleType'</span><span class="p">]</span><span class="o">.</span><span class="n">mode</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span>
+</code></pre></div></div>
+
+<p>Checking any remaining missing data</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">all_data_na_values</span> <span class="o">=</span> <span class="n">all_data</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="nb">sum</span><span class="p">()</span>
+<span class="n">all_data_na_values</span> <span class="o">=</span> <span class="n">all_data_na_values</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">all_data_na_values</span><span class="p">[</span><span class="n">all_data_na_values</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">index</span><span class="p">)</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="bp">False</span><span class="p">)[:</span><span class="mi">30</span><span class="p">]</span>
+<span class="n">all_data_na</span> <span class="o">=</span> <span class="p">(</span><span class="n">all_data</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="nb">sum</span><span class="p">()</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">all_data</span><span class="p">))</span> <span class="o">*</span> <span class="mi">100</span>
+<span class="n">all_data_na</span> <span class="o">=</span> <span class="n">all_data_na</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">all_data_na</span><span class="p">[</span><span class="n">all_data_na</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">index</span><span class="p">)</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="bp">False</span><span class="p">)[:</span><span class="mi">30</span><span class="p">]</span>
+<span class="n">missing_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s">'Missing Ratio'</span> <span class="p">:</span><span class="n">all_data_na</span><span class="p">,</span><span class="s">'Missing Values'</span> <span class="p">:</span><span class="n">all_data_na_values</span><span class="p">,</span><span class="s">'Data_type'</span><span class="p">:</span><span class="n">all_data_na</span><span class="o">.</span><span class="n">dtype</span><span class="p">})</span>
+<span class="n">missing_data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div style="overflow-x:auto; text-align: center">
+<style type="text/css">
+table.padded-table th { padding:10px; }
+</style>
+<table class="table-striped padded-table">
+  <thead>
+    <tr style="text-align: center;">
+      <th></th>
+      <th>Missing Ratio</th>
+      <th>Missing Values</th>
+      <th>Data_type</th>
+    </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table>
+</div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#Transforming required numerical features to categorical </span>
+
+<span class="n">all_data</span><span class="p">[</span><span class="s">'MSSubClass'</span><span class="p">]</span><span class="o">=</span> <span class="n">all_data</span><span class="p">[</span><span class="s">'MSSubClass'</span><span class="p">]</span><span class="o">.</span><span class="nb">apply</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+<span class="n">all_data</span><span class="p">[</span><span class="s">'OverallCond'</span><span class="p">]</span> <span class="o">=</span><span class="n">all_data</span><span class="p">[</span><span class="s">'OverallCond'</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+<span class="n">all_data</span><span class="p">[</span><span class="s">'YrSold'</span><span class="p">]</span> <span class="o">=</span> <span class="n">all_data</span><span class="p">[</span><span class="s">'YrSold'</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+<span class="n">all_data</span><span class="p">[</span><span class="s">'MoSold'</span><span class="p">]</span> <span class="o">=</span> <span class="n">all_data</span><span class="p">[</span><span class="s">'MoSold'</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#Label Encoding some categorical variables</span>
+<span class="c">#for information in their ordering set</span>
+
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">LabelEncoder</span>
+<span class="n">cols</span> <span class="o">=</span> <span class="p">(</span><span class="s">'FireplaceQu'</span><span class="p">,</span> <span class="s">'BsmtQual'</span><span class="p">,</span> <span class="s">'BsmtCond'</span><span class="p">,</span> <span class="s">'GarageQual'</span><span class="p">,</span> <span class="s">'GarageCond'</span><span class="p">,</span> 
+        <span class="s">'ExterQual'</span><span class="p">,</span> <span class="s">'ExterCond'</span><span class="p">,</span><span class="s">'HeatingQC'</span><span class="p">,</span> <span class="s">'PoolQC'</span><span class="p">,</span> <span class="s">'KitchenQual'</span><span class="p">,</span> <span class="s">'BsmtFinType1'</span><span class="p">,</span> 
+        <span class="s">'BsmtFinType2'</span><span class="p">,</span> <span class="s">'Functional'</span><span class="p">,</span> <span class="s">'Fence'</span><span class="p">,</span> <span class="s">'BsmtExposure'</span><span class="p">,</span> <span class="s">'GarageFinish'</span><span class="p">,</span> <span class="s">'LandSlope'</span><span class="p">,</span>
+        <span class="s">'LotShape'</span><span class="p">,</span> <span class="s">'PavedDrive'</span><span class="p">,</span> <span class="s">'Street'</span><span class="p">,</span> <span class="s">'Alley'</span><span class="p">,</span> <span class="s">'CentralAir'</span><span class="p">,</span> <span class="s">'MSSubClass'</span><span class="p">,</span> <span class="s">'OverallCond'</span><span class="p">,</span> 
+        <span class="s">'YrSold'</span><span class="p">,</span> <span class="s">'MoSold'</span><span class="p">)</span>
+
+<span class="c">#apply LabelEncoder to categorical features</span>
+
+<span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">cols</span><span class="p">:</span>
+    <span class="n">lbl</span> <span class="o">=</span> <span class="n">LabelEncoder</span><span class="p">()</span>
+    <span class="n">lbl</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">all_data</span><span class="p">[</span><span class="n">c</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">))</span>
+    <span class="n">all_data</span><span class="p">[</span><span class="n">c</span><span class="p">]</span> <span class="o">=</span> <span class="n">lbl</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">all_data</span><span class="p">[</span><span class="n">c</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">))</span>
+<span class="c">#shape</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Shape all_data: {}'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">all_data</span><span class="o">.</span><span class="n">shape</span><span class="p">))</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Shape all_data: (2917, 78)
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#add total surface area as TotalSf = basement + firstflr + secondflr</span>
+
+<span class="n">all_data</span><span class="p">[</span><span class="s">'TotalSF'</span><span class="p">]</span> <span class="o">=</span> <span class="n">all_data</span><span class="p">[</span><span class="s">'TotalBsmtSF'</span><span class="p">]</span> <span class="o">+</span> <span class="n">all_data</span><span class="p">[</span><span class="s">'1stFlrSF'</span><span class="p">]</span> <span class="o">+</span> <span class="n">all_data</span><span class="p">[</span><span class="s">'2ndFlrSF'</span><span class="p">]</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#log transform skewed numeric features</span>
+
+<span class="n">numeric_features</span> <span class="o">=</span> <span class="n">all_data</span><span class="o">.</span><span class="n">dtypes</span><span class="p">[</span><span class="n">all_data</span><span class="o">.</span><span class="n">dtypes</span> <span class="o">!=</span> <span class="s">"object"</span><span class="p">]</span><span class="o">.</span><span class="n">index</span>
+
+<span class="n">skewed_features</span> <span class="o">=</span> <span class="n">all_data</span><span class="p">[</span><span class="n">numeric_features</span><span class="p">]</span><span class="o">.</span><span class="nb">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="n">skew</span> <span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">dropna</span><span class="p">()))</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<span class="c">#compute skewness</span>
+<span class="k">print</span> <span class="p">(</span><span class="s">"</span><span class="err">\</span><span class="s">skew in numerical features: </span><span class="se">\n</span><span class="s">"</span><span class="p">)</span>
+<span class="n">skewness</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s">'Skew'</span> <span class="p">:</span><span class="n">skewed_features</span><span class="p">})</span>   
+<span class="n">skewness</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>\skew in numerical features: 
+</code></pre></div></div>
+
+<div style="overflow-x:auto; text-align: center">
+<style type="text/css">
+table.padded-table th { padding:10px; }
+</style>
+<table class="table-striped padded-table">
+  <thead>
+    <tr style="text-align: center;">
+      <th></th>
+      <th>Skew</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>MiscVal</th>
+      <td>21.939672</td>
+    </tr>
+    <tr>
+      <th>PoolArea</th>
+      <td>17.688664</td>
+    </tr>
+    <tr>
+      <th>LotArea</th>
+      <td>13.109495</td>
+    </tr>
+    <tr>
+      <th>LowQualFinSF</th>
+      <td>12.084539</td>
+    </tr>
+    <tr>
+      <th>3SsnPorch</th>
+      <td>11.372080</td>
+    </tr>
+    <tr>
+      <th>LandSlope</th>
+      <td>4.973254</td>
+    </tr>
+    <tr>
+      <th>KitchenAbvGr</th>
+      <td>4.300550</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h3 id="box-cox-transformation-of-highly-skewed-features">Box cox transformation of highly skewed features</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">skewness</span> <span class="o">=</span> <span class="n">skewness</span><span class="p">[</span><span class="nb">abs</span><span class="p">(</span><span class="n">skewness</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mf">0.75</span><span class="p">]</span>
+<span class="k">print</span> <span class="p">(</span><span class="s">"There are {} skewed numerical features to box cox transform"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">skewness</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+
+<span class="kn">from</span> <span class="nn">scipy.special</span> <span class="kn">import</span> <span class="n">boxcox1p</span> 
+<span class="n">skewed_features</span> <span class="o">=</span> <span class="n">skewness</span><span class="o">.</span><span class="n">index</span>
+<span class="n">lam</span> <span class="o">=</span> <span class="mf">0.15</span>
+<span class="k">for</span> <span class="n">feat</span> <span class="ow">in</span> <span class="n">skewed_features</span><span class="p">:</span>
+    <span class="n">all_data</span><span class="p">[</span><span class="n">feat</span><span class="p">]</span> <span class="o">=</span> <span class="n">boxcox1p</span><span class="p">(</span><span class="n">all_data</span><span class="p">[</span><span class="n">feat</span><span class="p">],</span> <span class="n">lam</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>There are 59 skewed numerical features to box cox transform
+</code></pre></div></div>
+
+<h3 id="adding-dummy-categorical-features">Adding dummy categorical features</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">all_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">get_dummies</span><span class="p">(</span><span class="n">all_data</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">all_data</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(2917, 220)
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ntrain</span> <span class="o">=</span> <span class="n">train</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">ntest</span> <span class="o">=</span> <span class="n">test</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">y_train</span><span class="o">=</span> <span class="n">train</span><span class="o">.</span><span class="n">SalePrice</span><span class="o">.</span><span class="n">values</span>
+<span class="n">train</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">all_data</span><span class="p">[:</span><span class="n">ntrain</span><span class="p">])</span>
+<span class="n">test</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">all_data</span><span class="p">[</span><span class="n">ntrain</span><span class="p">:])</span>
+</code></pre></div></div>
+
+<h2 id="linear-regression">Linear Regression</h2>
+
+<p>We’ll use LASSO (least absolute shrinkage and selection operator) and Gradient boosting regression models to train the dataset and make predictions separately.</p>
+
+<p>LASSO is a regression model that does variable selection and regularization. The LASSO model uses a parameter that penalizes fitting too many variables. It allows the shrinkage of variable coefficients to 0, which essentially results in those variables having no effect in the model, thereby reducing dimensionality. Since there are quite a few explanatory variables, reducing the number of variables may increase interpretability and prediction accuracy.</p>
+
+<p>Gradient boosting models are one of the most popular algorithms on Kaggle. A variant of GBMs known as the XGBoost has been a clear favorite for many recent competitions. The algorithm works well right out of the box. It is a type of ensemble model, like the random forest, where multiple decision trees are used and optimized over some cost function. The popularity and ability to score well in competition are reasons enough to use this type of model for house price prediction problem.</p>
+
+<p>Also, we’ll use cross validation and RMSLE(Root mean squared logarithmic error) to see how well each model performs.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">Lasso</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">RobustScaler</span>
+<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">GradientBoostingRegressor</span>
+<span class="kn">from</span> <span class="nn">sklearn.pipeline</span> <span class="kn">import</span> <span class="n">make_pipeline</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">KFold</span><span class="p">,</span> <span class="n">cross_val_score</span><span class="p">,</span> <span class="n">train_test_split</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_squared_error</span>
+<span class="kn">from</span> <span class="nn">sklearn.base</span> <span class="kn">import</span> <span class="n">BaseEstimator</span><span class="p">,</span> <span class="n">TransformerMixin</span><span class="p">,</span> <span class="n">RegressorMixin</span><span class="p">,</span> <span class="n">clone</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#validation function (Root Mean Squared Logarithmic Error)</span>
+<span class="n">n_folds</span> <span class="o">=</span> <span class="mi">5</span>
+
+<span class="k">def</span> <span class="nf">RMSLE_cv</span><span class="p">(</span><span class="n">model</span><span class="p">):</span>
+    <span class="n">kf</span> <span class="o">=</span> <span class="n">KFold</span><span class="p">(</span><span class="n">n_folds</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span><span class="o">.</span><span class="n">get_n_splits</span><span class="p">(</span><span class="n">train</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+    <span class="n">rmse</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="o">-</span><span class="n">cross_val_score</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">train</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="s">"neg_mean_squared_error"</span><span class="p">,</span>
+<span class="n">cv</span> <span class="o">=</span> <span class="n">kf</span><span class="p">))</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">rmse</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#lasso</span>
+<span class="n">lasso</span> <span class="o">=</span> <span class="n">make_pipeline</span><span class="p">(</span><span class="n">RobustScaler</span><span class="p">(),</span> <span class="n">Lasso</span><span class="p">(</span><span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.0005</span><span class="p">,</span> <span class="n">random_state</span> <span class="o">=</span> <span class="mi">1</span><span class="p">))</span>
+
+<span class="c">#Gradient Boosting Regression</span>
+<span class="n">GBoost</span> <span class="o">=</span> <span class="n">GradientBoostingRegressor</span><span class="p">(</span><span class="n">loss</span><span class="o">=</span><span class="s">'huber'</span><span class="p">,</span> <span class="n">learning_rate</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">n_estimators</span><span class="o">=</span><span class="mi">3000</span><span class="p">,</span>
+                                   <span class="n">min_samples_split</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">min_samples_leaf</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span><span class="n">max_depth</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
+                                   <span class="n">random_state</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="n">max_features</span><span class="o">=</span><span class="s">'sqrt'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#Lasso</span>
+<span class="n">score</span> <span class="o">=</span> <span class="n">RMSLE_cv</span><span class="p">(</span><span class="n">lasso</span><span class="p">)</span>
+<span class="k">print</span> <span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s"> Lasso score: {:.4f} ({:.4f})</span><span class="se">\n</span><span class="s">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">score</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span><span class="n">score</span><span class="o">.</span><span class="n">std</span><span class="p">()))</span>
+
+<span class="c">#Gradient Boosting Regression</span>
+<span class="n">score</span> <span class="o">=</span> <span class="n">RMSLE_cv</span><span class="p">(</span><span class="n">GBoost</span><span class="p">)</span>
+<span class="k">print</span> <span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s"> GBoost score: {:.4f} ({:.4f})</span><span class="se">\n</span><span class="s">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">score</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span><span class="n">score</span><span class="o">.</span><span class="n">std</span><span class="p">()))</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> Lasso score: 0.1115 (0.0074)
 
 
+ GBoost score: 0.1167 (0.0084)
+</code></pre></div></div>
 
+<p>Go ahead and stack the two models together (stacking two models together, what is called ensembling, can improve the accuracy).</p>
 
-    <div class="blog-navigation">
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">AveragingModels</span><span class="p">(</span><span class="n">BaseEstimator</span><span class="p">,</span> <span class="n">RegressorMixin</span><span class="p">,</span> <span class="n">TransformerMixin</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">models</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">models</span> <span class="o">=</span> <span class="n">models</span>
         
-            <a class="prev"></a>
+    <span class="c"># we define clones of the original models to fit the data in</span>
+    <span class="k">def</span> <span class="nf">fit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">models_</span> <span class="o">=</span> <span class="p">[</span><span class="n">clone</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">models</span><span class="p">]</span>
         
-        
-            <a class="next" href="http://localhost:4000/WebScrapingSelenium/">Web Scraping with Python &raquo;</a>
-        
-    </div>
+        <span class="c"># Train cloned base models</span>
+        <span class="k">for</span> <span class="n">model</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">models_</span><span class="p">:</span>
+            <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="bp">self</span>
+    
+    <span class="c">#Now we do the predictions for cloned models and average them</span>
+    <span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">):</span>
+        <span class="n">predictions</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">column_stack</span><span class="p">([</span>
+            <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span><span class="p">)</span> <span class="k">for</span> <span class="n">model</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">models_</span>
+        <span class="p">])</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">predictions</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>   
+
+
+    
+<span class="c"># Averaged base models score</span>
+
+<span class="n">averaged_models</span> <span class="o">=</span> <span class="n">AveragingModels</span><span class="p">(</span><span class="n">models</span> <span class="o">=</span> <span class="p">(</span><span class="n">GBoost</span><span class="p">,</span> <span class="n">lasso</span><span class="p">))</span>
+
+<span class="n">score</span> <span class="o">=</span> <span class="n">RMSLE_cv</span><span class="p">(</span><span class="n">averaged_models</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">" Averaged base models score: {:.4f} ({:.4f})</span><span class="se">\n</span><span class="s">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">score</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> <span class="n">score</span><span class="o">.</span><span class="n">std</span><span class="p">()))</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> Averaged base models score: 0.1089 (0.0078)
+</code></pre></div></div>
+
+<p>As we can see, marging those two methods reduce the RMSLE.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#defining RMSLE evaluation function</span>
+
+<span class="k">def</span> <span class="nf">RMSLE</span> <span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">))</span>
+</code></pre></div></div>
+
+<p>Finally, we’ll be training and making predictions of the stacked regressor.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#final training and prediction of the stacked regressor</span>
+
+<span class="n">averaged_models</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">train</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span> 
+<span class="n">stacked_train_pred</span> <span class="o">=</span> <span class="n">averaged_models</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">train</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+<span class="n">stacked_pred</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">expm1</span><span class="p">(</span><span class="n">averaged_models</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">test</span><span class="o">.</span><span class="n">values</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"RMSLE score on the train data:"</span><span class="p">)</span> 
+<span class="k">print</span><span class="p">(</span><span class="n">RMSLE</span><span class="p">(</span><span class="n">y_train</span><span class="p">,</span><span class="n">stacked_train_pred</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"Accuracy score:"</span><span class="p">)</span> 
+<span class="n">averaged_models</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">train</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>RMSLE score on the train data:
+0.06970805013738758
+Accuracy score:
+0.9695653949546431
+</code></pre></div></div>
+
+
+
 
 
 
@@ -2744,15 +3815,7 @@ button.close { padding: 0; cursor: pointer; background: transparent; border: 0; 
             
                 
             
-        
-            
                 
-            
-                
-            
-                
-            
-        
             
                 
             
@@ -2768,18 +3831,7 @@ button.close { padding: 0; cursor: pointer; background: transparent; border: 0; 
             
                 
             
-        
-            
                 
-            
-                
-            
-                
-            
-        
-    
-        
-        
             
                 
             
@@ -2795,18 +3847,7 @@ button.close { padding: 0; cursor: pointer; background: transparent; border: 0; 
             
                 
             
-        
-            
                 
-            
-                
-            
-                
-            
-        
-    
-        
-        
             
                 
             
@@ -2822,7 +3863,55 @@ button.close { padding: 0; cursor: pointer; background: transparent; border: 0; 
             
                 
             
+                
+            
+                
+            
+                
+            
+                
+            
         
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        
+            
+                
+            
+                
+            
+                
+            
+                
             
                 
             
@@ -2841,7 +3930,7 @@ button.close { padding: 0; cursor: pointer; background: transparent; border: 0; 
                     <ul>
                     
                     <li class="relatedPost">
-                        <a href="http://localhost:4000/markdown-common-elements/">Markdown Common Elements
+                        <a href="http://localhost:4000/SAT_Analysis/">SAT Analysis
                         
                         </a>
                     </li>
@@ -2853,7 +3942,131 @@ button.close { padding: 0; cursor: pointer; background: transparent; border: 0; 
             
                 
             
+                
+            
+                
+            
+                
+            
+                
+            
         
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        
+    
+        
+        
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        
+            
+                
+                    
+                    <li class="relatedPost">
+                        <a href="http://localhost:4000/WebScrapingSelenium/">Web Scraping with Python
+                        
+                        </a>
+                    </li>
+                    
+                    
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        
+            
+                
+            
+                
+            
+                
+            
+                
             
                 
             
