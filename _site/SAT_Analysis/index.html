@@ -24,9 +24,9 @@
     <meta property="og:image" content="http://localhost:4000/assets/images/profile.jpg">
     <meta property="og:type" content="profile">
 
-    <!-- Begin Jekyll SEO tag v2.5.0 -->
+    <!-- Begin Jekyll SEO tag v2.6.1 -->
 <title>SAT Analysis | Martin Pedernera</title>
-<meta name="generator" content="Jekyll v3.8.5" />
+<meta name="generator" content="Jekyll v3.9.0" />
 <meta property="og:title" content="SAT Analysis" />
 <meta name="author" content="pederneramartin" />
 <meta property="og:locale" content="en_US" />
@@ -36,9 +36,9 @@
 <meta property="og:url" content="http://localhost:4000/SAT_Analysis/" />
 <meta property="og:site_name" content="Martin Pedernera" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2019-05-08T17:30:00+01:00" />
+<meta property="article:published_time" content="2019-05-08T17:30:00+02:00" />
 <script type="application/ld+json">
-{"description":"Analysis of allegations about the SAT being unfair to certain racial groups in the US.","author":{"@type":"Person","name":"pederneramartin"},"@type":"BlogPosting","url":"http://localhost:4000/SAT_Analysis/","headline":"SAT Analysis","dateModified":"2019-05-08T17:30:00+01:00","datePublished":"2019-05-08T17:30:00+01:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/SAT_Analysis/"},"@context":"http://schema.org"}</script>
+{"headline":"SAT Analysis","dateModified":"2019-05-08T17:30:00+02:00","datePublished":"2019-05-08T17:30:00+02:00","url":"http://localhost:4000/SAT_Analysis/","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/SAT_Analysis/"},"author":{"@type":"Person","name":"pederneramartin"},"description":"Analysis of allegations about the SAT being unfair to certain racial groups in the US.","@type":"BlogPosting","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
     
@@ -2601,16 +2601,16 @@ button.close { padding: 0; cursor: pointer; background: transparent; border: 0; 
 
 <span class="n">data</span> <span class="o">=</span> <span class="p">{}</span>
 <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
-    <span class="n">d</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">"schools/{0}"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">f</span><span class="p">))</span>
-    <span class="n">data</span><span class="p">[</span><span class="n">f</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">".csv"</span><span class="p">,</span> <span class="s">""</span><span class="p">)]</span> <span class="o">=</span> <span class="n">d</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">"schools/{0}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">f</span><span class="p">))</span>
+    <span class="n">data</span><span class="p">[</span><span class="n">f</span><span class="p">.</span><span class="n">replace</span><span class="p">(</span><span class="s">".csv"</span><span class="p">,</span> <span class="s">""</span><span class="p">)]</span> <span class="o">=</span> <span class="n">d</span>
 </code></pre></div></div>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="n">data</span><span class="p">.</span><span class="n">items</span><span class="p">():</span>
     <span class="k">print</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">"</span> <span class="o">+</span> <span class="n">k</span> <span class="o">+</span> <span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">)</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">v</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">v</span><span class="p">.</span><span class="n">head</span><span class="p">())</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ap_2010
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ap_2010
 
       DBN                             SchoolName  AP Test Takers   \
 0  01M448           UNIVERSITY NEIGHBORHOOD H.S.             39.0   
@@ -2646,21 +2646,21 @@ button.close { padding: 0; cursor: pointer; background: transparent; border: 0; 
 
 <p>Combine CSD and SCHOOL CODE (include BOROUGH) to create DBN Code in class_size.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">data</span><span class="p">[</span><span class="s">"class_size"</span><span class="p">][</span><span class="s">"DBN"</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s">"class_size"</span><span class="p">]</span><span class="o">.</span><span class="nb">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s">"{0:02d}{1}"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="s">"CSD"</span><span class="p">],</span> <span class="n">x</span><span class="p">[</span><span class="s">"SCHOOL CODE"</span><span class="p">]),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">data</span><span class="p">[</span><span class="s">"class_size"</span><span class="p">][</span><span class="s">"DBN"</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s">"class_size"</span><span class="p">].</span><span class="nb">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s">"{0:02d}{1}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="s">"CSD"</span><span class="p">],</span> <span class="n">x</span><span class="p">[</span><span class="s">"SCHOOL CODE"</span><span class="p">]),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </code></pre></div></div>
 
 <h2 id="adding-the-surveys">Adding the surveys</h2>
 
 <p>These surveys include information about the perceived safety of each school, academic standards, and more.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">survey1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">"schools/survey_all.txt"</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s">"</span><span class="se">\t</span><span class="s">"</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s">'windows-1252'</span><span class="p">)</span>
-<span class="n">survey2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">"schools/survey_d75.txt"</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s">"</span><span class="se">\t</span><span class="s">"</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s">'windows-1252'</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">survey1</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">"schools/survey_all.txt"</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s">"</span><span class="se">\t</span><span class="s">"</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s">'windows-1252'</span><span class="p">)</span>
+<span class="n">survey2</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">"schools/survey_d75.txt"</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s">"</span><span class="se">\t</span><span class="s">"</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s">'windows-1252'</span><span class="p">)</span>
 <span class="n">survey1</span><span class="p">[</span><span class="s">"d75"</span><span class="p">]</span> <span class="o">=</span> <span class="bp">False</span>
 <span class="n">survey2</span><span class="p">[</span><span class="s">"d75"</span><span class="p">]</span> <span class="o">=</span> <span class="bp">True</span>
-<span class="n">survey</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">survey1</span><span class="p">,</span> <span class="n">survey2</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">survey</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">concat</span><span class="p">([</span><span class="n">survey1</span><span class="p">,</span> <span class="n">survey2</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 </code></pre></div></div>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">survey</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">survey</span><span class="p">.</span><span class="n">head</span><span class="p">()</span>
 </code></pre></div></div>
 <p><em>Output truncated</em></p>
 
@@ -2668,16 +2668,16 @@ button.close { padding: 0; cursor: pointer; background: transparent; border: 0; 
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">survey</span><span class="p">[</span><span class="s">"DBN"</span><span class="p">]</span> <span class="o">=</span> <span class="n">survey</span><span class="p">[</span><span class="s">"dbn"</span><span class="p">]</span>
 <span class="n">survey_fields</span> <span class="o">=</span> <span class="p">[</span><span class="s">"DBN"</span><span class="p">,</span> <span class="s">"rr_s"</span><span class="p">,</span> <span class="s">"rr_t"</span><span class="p">,</span> <span class="s">"rr_p"</span><span class="p">,</span> <span class="s">"N_s"</span><span class="p">,</span> <span class="s">"N_t"</span><span class="p">,</span> <span class="s">"N_p"</span><span class="p">,</span> <span class="s">"saf_p_11"</span><span class="p">,</span> <span class="s">"com_p_11"</span><span class="p">,</span> <span class="s">"eng_p_11"</span><span class="p">,</span> <span class="s">"aca_p_11"</span><span class="p">,</span> <span class="s">"saf_t_11"</span><span class="p">,</span> <span class="s">"com_t_11"</span><span class="p">,</span> <span class="s">"eng_t_10"</span><span class="p">,</span> <span class="s">"aca_t_11"</span><span class="p">,</span> <span class="s">"saf_s_11"</span><span class="p">,</span> <span class="s">"com_s_11"</span><span class="p">,</span> <span class="s">"eng_s_11"</span><span class="p">,</span> <span class="s">"aca_s_11"</span><span class="p">,</span> <span class="s">"saf_tot_11"</span><span class="p">,</span> <span class="s">"com_tot_11"</span><span class="p">,</span> <span class="s">"eng_tot_11"</span><span class="p">,</span> <span class="s">"aca_tot_11"</span><span class="p">,]</span>
-<span class="n">survey</span> <span class="o">=</span> <span class="n">survey</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="n">survey_fields</span><span class="p">]</span>
+<span class="n">survey</span> <span class="o">=</span> <span class="n">survey</span><span class="p">.</span><span class="n">loc</span><span class="p">[:,</span><span class="n">survey_fields</span><span class="p">]</span>
 <span class="n">data</span><span class="p">[</span><span class="s">"survey"</span><span class="p">]</span> <span class="o">=</span> <span class="n">survey</span>
-<span class="n">survey</span><span class="o">.</span><span class="n">shape</span>
+<span class="n">survey</span><span class="p">.</span><span class="n">shape</span>
 </code></pre></div></div>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(1702, 23)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(1702, 23)
 </code></pre></div></div>
 
 <p>There are several rows for each high school. However, if we take a look at the sat_results dataset, it only has one row per high school.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">data</span><span class="p">[</span><span class="s">"class_size"</span><span class="p">]</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">data</span><span class="p">[</span><span class="s">"class_size"</span><span class="p">].</span><span class="n">head</span><span class="p">()</span>
 </code></pre></div></div>
 
 <div style="overflow-x:auto; text-align: center">
@@ -2808,7 +2808,7 @@ table.padded-table th { padding:10px; }
 
 <p><br /></p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">data</span><span class="p">[</span><span class="s">"sat_results"</span><span class="p">]</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">data</span><span class="p">[</span><span class="s">"sat_results"</span><span class="p">].</span><span class="n">head</span><span class="p">()</span>
 </code></pre></div></div>
 <p><br /></p>
 
@@ -2884,8 +2884,8 @@ table.padded-table th { padding:10px; }
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">class_size</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s">"class_size"</span><span class="p">]</span>
 <span class="n">class_size</span> <span class="o">=</span> <span class="n">class_size</span><span class="p">[</span><span class="n">class_size</span><span class="p">[</span><span class="s">"GRADE "</span><span class="p">]</span> <span class="o">==</span> <span class="s">"09-12"</span><span class="p">]</span>
 <span class="n">class_size</span> <span class="o">=</span> <span class="n">class_size</span><span class="p">[</span><span class="n">class_size</span><span class="p">[</span><span class="s">"PROGRAM TYPE"</span><span class="p">]</span> <span class="o">==</span> <span class="s">"GEN ED"</span><span class="p">]</span>
-<span class="n">class_size</span> <span class="o">=</span> <span class="n">class_size</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s">"DBN"</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">)</span>
-<span class="n">class_size</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">class_size</span> <span class="o">=</span> <span class="n">class_size</span><span class="p">.</span><span class="n">groupby</span><span class="p">(</span><span class="s">"DBN"</span><span class="p">).</span><span class="n">agg</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">mean</span><span class="p">)</span>
+<span class="n">class_size</span><span class="p">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 <span class="n">data</span><span class="p">[</span><span class="s">"class_size"</span><span class="p">]</span> <span class="o">=</span> <span class="n">class_size</span>
 </code></pre></div></div>
 
@@ -2893,7 +2893,7 @@ table.padded-table th { padding:10px; }
 
 <p>In demographics dataset, the data was collected for multiple years for the same schools, so there are duplicate rows for each school. We’ll only pick rows where the schoolyear field is the most recent available.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">data</span><span class="p">[</span><span class="s">"demographics"</span><span class="p">]</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">data</span><span class="p">[</span><span class="s">"demographics"</span><span class="p">].</span><span class="n">head</span><span class="p">()</span>
 </code></pre></div></div>
 
 <p><br /></p>
@@ -3052,13 +3052,13 @@ table.padded-table th { padding:10px; }
 <p><br /></p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">demographics</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s">"demographics"</span><span class="p">]</span>
-<span class="n">demographics</span> <span class="o">=</span> <span class="n">demographics</span><span class="p">[</span><span class="n">demographics</span><span class="p">[</span><span class="s">"schoolyear"</span><span class="p">]</span> <span class="o">==</span> <span class="mi">20112012</span><span class="p">]</span> <span class="c">#MOST RECENT</span>
-<span class="n">data</span><span class="p">[</span><span class="s">"demographics"</span><span class="p">]</span> <span class="o">=</span> <span class="n">demographics</span>
+<span class="n">demographics</span> <span class="o">=</span> <span class="n">demographics</span><span class="p">[</span><span class="n">demographics</span><span class="p">[</span><span class="s">"schoolyear"</span><span class="p">]</span> <span class="o">==</span> <span class="mi">20112012</span><span class="p">]</span> <span class="c1">#MOST RECENT
+</span><span class="n">data</span><span class="p">[</span><span class="s">"demographics"</span><span class="p">]</span> <span class="o">=</span> <span class="n">demographics</span>
 </code></pre></div></div>
 
 <p>Selecting one year and one grade for math_test_results</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">data</span><span class="p">[</span><span class="s">"math_test_results"</span><span class="p">]</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">data</span><span class="p">[</span><span class="s">"math_test_results"</span><span class="p">].</span><span class="n">head</span><span class="p">()</span>
 </code></pre></div></div>
 
 <p><br /></p>
@@ -3185,14 +3185,14 @@ table.padded-table th { padding:10px; }
 
 <p><br /></p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">data</span><span class="p">[</span><span class="s">"math_test_results"</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s">"math_test_results"</span><span class="p">][</span><span class="n">data</span><span class="p">[</span><span class="s">"math_test_results"</span><span class="p">][</span><span class="s">"Year"</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2011</span><span class="p">]</span> <span class="c">#MOST RECENT</span>
-<span class="n">data</span><span class="p">[</span><span class="s">"math_test_results"</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s">"math_test_results"</span><span class="p">][</span><span class="n">data</span><span class="p">[</span><span class="s">"math_test_results"</span><span class="p">][</span><span class="s">"Grade"</span><span class="p">]</span> <span class="o">==</span> <span class="s">'8'</span><span class="p">]</span> <span class="c">#HIGHER</span>
-</code></pre></div></div>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">data</span><span class="p">[</span><span class="s">"math_test_results"</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s">"math_test_results"</span><span class="p">][</span><span class="n">data</span><span class="p">[</span><span class="s">"math_test_results"</span><span class="p">][</span><span class="s">"Year"</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2011</span><span class="p">]</span> <span class="c1">#MOST RECENT
+</span><span class="n">data</span><span class="p">[</span><span class="s">"math_test_results"</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s">"math_test_results"</span><span class="p">][</span><span class="n">data</span><span class="p">[</span><span class="s">"math_test_results"</span><span class="p">][</span><span class="s">"Grade"</span><span class="p">]</span> <span class="o">==</span> <span class="s">'8'</span><span class="p">]</span> <span class="c1">#HIGHER
+</span></code></pre></div></div>
 
 <p>Graduation needs to be condensed</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">data</span><span class="p">[</span><span class="s">"graduation"</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s">"graduation"</span><span class="p">][</span><span class="n">data</span><span class="p">[</span><span class="s">"graduation"</span><span class="p">][</span><span class="s">"Cohort"</span><span class="p">]</span> <span class="o">==</span> <span class="s">"2006"</span><span class="p">]</span> <span class="c">#MOST RECENT</span>
-<span class="n">data</span><span class="p">[</span><span class="s">"graduation"</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s">"graduation"</span><span class="p">][</span><span class="n">data</span><span class="p">[</span><span class="s">"graduation"</span><span class="p">][</span><span class="s">"Demographic"</span><span class="p">]</span> <span class="o">==</span> <span class="s">"Total Cohort"</span><span class="p">]</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">data</span><span class="p">[</span><span class="s">"graduation"</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s">"graduation"</span><span class="p">][</span><span class="n">data</span><span class="p">[</span><span class="s">"graduation"</span><span class="p">][</span><span class="s">"Cohort"</span><span class="p">]</span> <span class="o">==</span> <span class="s">"2006"</span><span class="p">]</span> <span class="c1">#MOST RECENT
+</span><span class="n">data</span><span class="p">[</span><span class="s">"graduation"</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s">"graduation"</span><span class="p">][</span><span class="n">data</span><span class="p">[</span><span class="s">"graduation"</span><span class="p">][</span><span class="s">"Demographic"</span><span class="p">]</span> <span class="o">==</span> <span class="s">"Total Cohort"</span><span class="p">]</span>
 </code></pre></div></div>
 
 <h2 id="computing-variables">Computing variables</h2>
@@ -3208,7 +3208,7 @@ table.padded-table th { padding:10px; }
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cols</span> <span class="o">=</span> <span class="p">[</span><span class="s">'SAT Math Avg. Score'</span><span class="p">,</span> <span class="s">'SAT Critical Reading Avg. Score'</span><span class="p">,</span> <span class="s">'SAT Writing Avg. Score'</span><span class="p">]</span>
 <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">cols</span><span class="p">:</span>
-    <span class="n">data</span><span class="p">[</span><span class="s">"sat_results"</span><span class="p">][</span><span class="n">c</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s">"sat_results"</span><span class="p">][</span><span class="n">c</span><span class="p">]</span><span class="o">.</span><span class="n">convert_objects</span><span class="p">(</span><span class="n">convert_numeric</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">data</span><span class="p">[</span><span class="s">"sat_results"</span><span class="p">][</span><span class="n">c</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s">"sat_results"</span><span class="p">][</span><span class="n">c</span><span class="p">].</span><span class="n">convert_objects</span><span class="p">(</span><span class="n">convert_numeric</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 
 <span class="n">data</span><span class="p">[</span><span class="s">'sat_results'</span><span class="p">][</span><span class="s">'sat_score'</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s">'sat_results'</span><span class="p">][</span><span class="n">cols</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="o">+</span> <span class="n">data</span><span class="p">[</span><span class="s">'sat_results'</span><span class="p">][</span><span class="n">cols</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span> <span class="o">+</span> <span class="n">data</span><span class="p">[</span><span class="s">'sat_results'</span><span class="p">][</span><span class="n">cols</span><span class="p">[</span><span class="mi">2</span><span class="p">]]</span>
 </code></pre></div></div>
@@ -3220,18 +3220,18 @@ table.padded-table th { padding:10px; }
   <li>Convert lat and lon to be numeric.</li>
 </ul>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">data</span><span class="p">[</span><span class="s">"hs_directory"</span><span class="p">][</span><span class="s">'lat'</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s">"hs_directory"</span><span class="p">][</span><span class="s">'Location 1'</span><span class="p">]</span><span class="o">.</span><span class="nb">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">"("</span><span class="p">,</span> <span class="s">""</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">")"</span><span class="p">,</span> <span class="s">""</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">", "</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
-<span class="n">data</span><span class="p">[</span><span class="s">"hs_directory"</span><span class="p">][</span><span class="s">'lon'</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s">"hs_directory"</span><span class="p">][</span><span class="s">'Location 1'</span><span class="p">]</span><span class="o">.</span><span class="nb">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">"("</span><span class="p">,</span> <span class="s">""</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">")"</span><span class="p">,</span> <span class="s">""</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">", "</span><span class="p">)[</span><span class="mi">1</span><span class="p">])</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">data</span><span class="p">[</span><span class="s">"hs_directory"</span><span class="p">][</span><span class="s">'lat'</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s">"hs_directory"</span><span class="p">][</span><span class="s">'Location 1'</span><span class="p">].</span><span class="nb">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">.</span><span class="n">split</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">].</span><span class="n">replace</span><span class="p">(</span><span class="s">"("</span><span class="p">,</span> <span class="s">""</span><span class="p">).</span><span class="n">replace</span><span class="p">(</span><span class="s">")"</span><span class="p">,</span> <span class="s">""</span><span class="p">).</span><span class="n">split</span><span class="p">(</span><span class="s">", "</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">data</span><span class="p">[</span><span class="s">"hs_directory"</span><span class="p">][</span><span class="s">'lon'</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s">"hs_directory"</span><span class="p">][</span><span class="s">'Location 1'</span><span class="p">].</span><span class="nb">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">.</span><span class="n">split</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">].</span><span class="n">replace</span><span class="p">(</span><span class="s">"("</span><span class="p">,</span> <span class="s">""</span><span class="p">).</span><span class="n">replace</span><span class="p">(</span><span class="s">")"</span><span class="p">,</span> <span class="s">""</span><span class="p">).</span><span class="n">split</span><span class="p">(</span><span class="s">", "</span><span class="p">)[</span><span class="mi">1</span><span class="p">])</span>
 <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="p">[</span><span class="s">'lat'</span><span class="p">,</span> <span class="s">'lon'</span><span class="p">]:</span>
-    <span class="n">data</span><span class="p">[</span><span class="s">"hs_directory"</span><span class="p">][</span><span class="n">c</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s">"hs_directory"</span><span class="p">][</span><span class="n">c</span><span class="p">]</span><span class="o">.</span><span class="n">convert_objects</span><span class="p">(</span><span class="n">convert_numeric</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">data</span><span class="p">[</span><span class="s">"hs_directory"</span><span class="p">][</span><span class="n">c</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s">"hs_directory"</span><span class="p">][</span><span class="n">c</span><span class="p">].</span><span class="n">convert_objects</span><span class="p">(</span><span class="n">convert_numeric</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 </code></pre></div></div>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="n">data</span><span class="p">.</span><span class="n">items</span><span class="p">():</span>
     <span class="k">print</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">v</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">v</span><span class="p">.</span><span class="n">head</span><span class="p">())</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ap_2010
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ap_2010
       DBN                             SchoolName  AP Test Takers   \
 0  01M448           UNIVERSITY NEIGHBORHOOD H.S.             39.0   
 1  01M450                 EAST SIDE COMMUNITY HS             19.0   
@@ -3266,16 +3266,16 @@ table.padded-table th { padding:10px; }
 <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">f</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">flat_data</span><span class="p">[</span><span class="mi">1</span><span class="p">:]):</span>
     <span class="n">name</span> <span class="o">=</span> <span class="n">flat_data_names</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
     <span class="k">print</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
-    <span class="k">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">f</span><span class="p">[</span><span class="s">"DBN"</span><span class="p">])</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">f</span><span class="p">[</span><span class="s">"DBN"</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()))</span>
+    <span class="k">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">f</span><span class="p">[</span><span class="s">"DBN"</span><span class="p">])</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">f</span><span class="p">[</span><span class="s">"DBN"</span><span class="p">].</span><span class="n">unique</span><span class="p">()))</span>
     <span class="n">join_type</span> <span class="o">=</span> <span class="s">"inner"</span>
     <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="p">[</span><span class="s">"sat_results"</span><span class="p">,</span> <span class="s">"ap_2010"</span><span class="p">,</span> <span class="s">"graduation"</span><span class="p">]:</span>
         <span class="n">join_type</span> <span class="o">=</span> <span class="s">"outer"</span>
     <span class="k">if</span> <span class="n">name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s">"math_test_results"</span><span class="p">]:</span>
-        <span class="n">full</span> <span class="o">=</span> <span class="n">full</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s">"DBN"</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="n">join_type</span><span class="p">)</span>
-<span class="n">full</span><span class="o">.</span><span class="n">shape</span>
+        <span class="n">full</span> <span class="o">=</span> <span class="n">full</span><span class="p">.</span><span class="n">merge</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s">"DBN"</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="n">join_type</span><span class="p">)</span>
+<span class="n">full</span><span class="p">.</span><span class="n">shape</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(374, 180)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(374, 180)
 </code></pre></div></div>
 
 <p><em>Output truncated</em></p>
@@ -3286,29 +3286,29 @@ table.padded-table th { padding:10px; }
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cols</span> <span class="o">=</span> <span class="p">[</span><span class="s">'AP Test Takers '</span><span class="p">,</span> <span class="s">'Total Exams Taken'</span><span class="p">,</span> <span class="s">'Number of Exams with scores 3 4 or 5'</span><span class="p">]</span>
 <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">cols</span><span class="p">:</span>
-    <span class="n">full</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="n">full</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">convert_objects</span><span class="p">(</span><span class="n">convert_numeric</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">full</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="n">full</span><span class="p">[</span><span class="n">col</span><span class="p">].</span><span class="n">convert_objects</span><span class="p">(</span><span class="n">convert_numeric</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 
-<span class="n">full</span><span class="p">[</span><span class="n">cols</span><span class="p">]</span> <span class="o">=</span> <span class="n">full</span><span class="p">[</span><span class="n">cols</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">full</span><span class="p">[</span><span class="n">cols</span><span class="p">]</span> <span class="o">=</span> <span class="n">full</span><span class="p">[</span><span class="n">cols</span><span class="p">].</span><span class="n">fillna</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>Then, we’ll need to calculate a school_dist column that indicates the school district of the school. This will enable us to match up school districts and plot out district-level statistics using the district maps we downloaded earlier:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">full</span><span class="p">[</span><span class="s">"school_dist"</span><span class="p">]</span> <span class="o">=</span> <span class="n">full</span><span class="p">[</span><span class="s">"DBN"</span><span class="p">]</span><span class="o">.</span><span class="nb">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[:</span><span class="mi">2</span><span class="p">])</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">full</span><span class="p">[</span><span class="s">"school_dist"</span><span class="p">]</span> <span class="o">=</span> <span class="n">full</span><span class="p">[</span><span class="s">"DBN"</span><span class="p">].</span><span class="nb">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[:</span><span class="mi">2</span><span class="p">])</span>
 </code></pre></div></div>
 
 <p>Finally, we’ll need to fill in any missing values in full with the mean of the column, so we can compute correlations:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">full</span> <span class="o">=</span> <span class="n">full</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">full</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">full</span> <span class="o">=</span> <span class="n">full</span><span class="p">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">full</span><span class="p">.</span><span class="n">mean</span><span class="p">())</span>
 </code></pre></div></div>
 
 <h2 id="computing-correlations">Computing correlations</h2>
 
 <p>A good way to explore a dataset and see what columns are related to the one you care about is to compute correlations. The closer to 0 the correlation, the weaker the connection. The closer to 1, the stronger the positive correlation, and the closer to -1, the stronger the negative correlation.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">full</span><span class="o">.</span><span class="n">corr</span><span class="p">()[</span><span class="s">'sat_score'</span><span class="p">]</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">full</span><span class="p">.</span><span class="n">corr</span><span class="p">()[</span><span class="s">'sat_score'</span><span class="p">]</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Year                                           NaN
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Year                                           NaN
 Number Tested                         8.127817e-02
 Mean Scale Score                      2.419244e-01
 Level 1 #                            -1.753035e-01
@@ -3392,9 +3392,9 @@ Name: sat_score, Length: 95, dtype: float64
   <li>Display the map.</li>
 </ul>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Install a pip package in the current Jupyter kernel</span>
-<span class="kn">import</span> <span class="nn">sys</span>
-<span class="err">!</span><span class="p">{</span><span class="n">sys</span><span class="o">.</span><span class="n">executable</span><span class="p">}</span> <span class="o">-</span><span class="n">m</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">folium</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Install a pip package in the current Jupyter kernel
+</span><span class="kn">import</span> <span class="nn">sys</span>
+<span class="err">!</span><span class="p">{</span><span class="n">sys</span><span class="p">.</span><span class="n">executable</span><span class="p">}</span> <span class="o">-</span><span class="n">m</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">folium</span>
 </code></pre></div></div>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">folium</span>
@@ -3402,11 +3402,11 @@ Name: sat_score, Length: 95, dtype: float64
 <span class="kn">from</span> <span class="nn">folium.plugins</span> <span class="kn">import</span> <span class="n">MarkerCluster</span>
 
 
-<span class="n">schools_map</span> <span class="o">=</span> <span class="n">folium</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span><span class="n">location</span><span class="o">=</span><span class="p">[</span><span class="n">full</span><span class="p">[</span><span class="s">'lat'</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> <span class="n">full</span><span class="p">[</span><span class="s">'lon'</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()],</span> <span class="n">zoom_start</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
-<span class="n">marker_cluster</span> <span class="o">=</span> <span class="n">MarkerCluster</span><span class="p">()</span><span class="o">.</span><span class="n">add_to</span><span class="p">(</span><span class="n">schools_map</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">full</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
-    <span class="n">folium</span><span class="o">.</span><span class="n">Marker</span><span class="p">([</span><span class="n">row</span><span class="p">[</span><span class="s">"lat"</span><span class="p">],</span> <span class="n">row</span><span class="p">[</span><span class="s">"lon"</span><span class="p">]],</span> <span class="n">popup</span><span class="o">=</span><span class="s">"{0}: {1}"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s">"DBN"</span><span class="p">],</span> <span class="n">row</span><span class="p">[</span><span class="s">"school_name"</span><span class="p">]))</span><span class="o">.</span><span class="n">add_to</span><span class="p">(</span><span class="n">marker_cluster</span><span class="p">)</span>
-<span class="n">schools_map</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s">'schools.html'</span><span class="p">)</span>
+<span class="n">schools_map</span> <span class="o">=</span> <span class="n">folium</span><span class="p">.</span><span class="n">Map</span><span class="p">(</span><span class="n">location</span><span class="o">=</span><span class="p">[</span><span class="n">full</span><span class="p">[</span><span class="s">'lat'</span><span class="p">].</span><span class="n">mean</span><span class="p">(),</span> <span class="n">full</span><span class="p">[</span><span class="s">'lon'</span><span class="p">].</span><span class="n">mean</span><span class="p">()],</span> <span class="n">zoom_start</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">marker_cluster</span> <span class="o">=</span> <span class="n">MarkerCluster</span><span class="p">().</span><span class="n">add_to</span><span class="p">(</span><span class="n">schools_map</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">full</span><span class="p">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="n">folium</span><span class="p">.</span><span class="n">Marker</span><span class="p">([</span><span class="n">row</span><span class="p">[</span><span class="s">"lat"</span><span class="p">],</span> <span class="n">row</span><span class="p">[</span><span class="s">"lon"</span><span class="p">]],</span> <span class="n">popup</span><span class="o">=</span><span class="s">"{0}: {1}"</span><span class="p">.</span><span class="nb">format</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s">"DBN"</span><span class="p">],</span> <span class="n">row</span><span class="p">[</span><span class="s">"school_name"</span><span class="p">])).</span><span class="n">add_to</span><span class="p">(</span><span class="n">marker_cluster</span><span class="p">)</span>
+<span class="n">schools_map</span><span class="p">.</span><span class="n">save</span><span class="p">(</span><span class="s">'schools.html'</span><span class="p">)</span>
 <span class="n">schools_map</span>
 </code></pre></div></div>
 
@@ -3416,9 +3416,9 @@ Name: sat_score, Length: 95, dtype: float64
 
 <p>This map is helpful, but it’s hard to see where the most schools are in NYC. Instead, we’ll make a heatmap:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">schools_heatmap</span> <span class="o">=</span> <span class="n">folium</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span><span class="n">location</span><span class="o">=</span><span class="p">[</span><span class="n">full</span><span class="p">[</span><span class="s">'lat'</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> <span class="n">full</span><span class="p">[</span><span class="s">'lon'</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()],</span> <span class="n">zoom_start</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
-<span class="n">schools_heatmap</span><span class="o">.</span><span class="n">add_children</span><span class="p">(</span><span class="n">plugins</span><span class="o">.</span><span class="n">HeatMap</span><span class="p">([[</span><span class="n">row</span><span class="p">[</span><span class="s">"lat"</span><span class="p">],</span> <span class="n">row</span><span class="p">[</span><span class="s">"lon"</span><span class="p">]]</span> <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">full</span><span class="o">.</span><span class="n">iterrows</span><span class="p">()]))</span>
-<span class="n">schools_heatmap</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s">"heatmap.html"</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">schools_heatmap</span> <span class="o">=</span> <span class="n">folium</span><span class="p">.</span><span class="n">Map</span><span class="p">(</span><span class="n">location</span><span class="o">=</span><span class="p">[</span><span class="n">full</span><span class="p">[</span><span class="s">'lat'</span><span class="p">].</span><span class="n">mean</span><span class="p">(),</span> <span class="n">full</span><span class="p">[</span><span class="s">'lon'</span><span class="p">].</span><span class="n">mean</span><span class="p">()],</span> <span class="n">zoom_start</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">schools_heatmap</span><span class="p">.</span><span class="n">add_children</span><span class="p">(</span><span class="n">plugins</span><span class="p">.</span><span class="n">HeatMap</span><span class="p">([[</span><span class="n">row</span><span class="p">[</span><span class="s">"lat"</span><span class="p">],</span> <span class="n">row</span><span class="p">[</span><span class="s">"lon"</span><span class="p">]]</span> <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">full</span><span class="p">.</span><span class="n">iterrows</span><span class="p">()]))</span>
+<span class="n">schools_heatmap</span><span class="p">.</span><span class="n">save</span><span class="p">(</span><span class="s">"heatmap.html"</span><span class="p">)</span>
 <span class="n">schools_heatmap</span>
 </code></pre></div></div>
 
@@ -3436,18 +3436,18 @@ Name: sat_score, Length: 95, dtype: float64
   <li>Convert the school_dist field to remove leading 0s, so we can match our geograpghic district data.</li>
 </ul>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">district_data</span> <span class="o">=</span> <span class="n">full</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s">"school_dist"</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">)</span>
-<span class="n">district_data</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-<span class="n">district_data</span><span class="p">[</span><span class="s">"school_dist"</span><span class="p">]</span> <span class="o">=</span> <span class="n">district_data</span><span class="p">[</span><span class="s">"school_dist"</span><span class="p">]</span><span class="o">.</span><span class="nb">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">)))</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">district_data</span> <span class="o">=</span> <span class="n">full</span><span class="p">.</span><span class="n">groupby</span><span class="p">(</span><span class="s">"school_dist"</span><span class="p">).</span><span class="n">agg</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">mean</span><span class="p">)</span>
+<span class="n">district_data</span><span class="p">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">district_data</span><span class="p">[</span><span class="s">"school_dist"</span><span class="p">]</span> <span class="o">=</span> <span class="n">district_data</span><span class="p">[</span><span class="s">"school_dist"</span><span class="p">].</span><span class="nb">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">)))</span>
 </code></pre></div></div>
 
 <p>We’ll now we able to plot the average SAT score in each school district. In order to do this, we’ll read in data in GeoJSON format to get the shapes of each district, then match each district shape with the SAT score using the school_dist column, then finally create the plot.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">show_district_map</span><span class="p">(</span><span class="n">col</span><span class="p">):</span>
 
-    <span class="n">districts</span> <span class="o">=</span> <span class="n">folium</span><span class="o">.</span><span class="n">Map</span><span class="p">(</span><span class="n">location</span><span class="o">=</span><span class="p">[</span><span class="n">full</span><span class="p">[</span><span class="s">'lat'</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> <span class="n">full</span><span class="p">[</span><span class="s">'lon'</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()],</span> <span class="n">zoom_start</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+    <span class="n">districts</span> <span class="o">=</span> <span class="n">folium</span><span class="p">.</span><span class="n">Map</span><span class="p">(</span><span class="n">location</span><span class="o">=</span><span class="p">[</span><span class="n">full</span><span class="p">[</span><span class="s">'lat'</span><span class="p">].</span><span class="n">mean</span><span class="p">(),</span> <span class="n">full</span><span class="p">[</span><span class="s">'lon'</span><span class="p">].</span><span class="n">mean</span><span class="p">()],</span> <span class="n">zoom_start</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
     
-    <span class="n">folium</span><span class="o">.</span><span class="n">Choropleth</span><span class="p">(</span>
+    <span class="n">folium</span><span class="p">.</span><span class="n">Choropleth</span><span class="p">(</span>
         <span class="n">geo_data</span><span class="o">=</span> <span class="p">(</span><span class="s">'schools/districts.geojson'</span><span class="p">),</span>
         <span class="n">data</span><span class="o">=</span><span class="n">district_data</span><span class="p">,</span>
         <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s">'school_dist'</span><span class="p">,</span> <span class="n">col</span><span class="p">],</span>
@@ -3455,9 +3455,9 @@ Name: sat_score, Length: 95, dtype: float64
         <span class="n">fill_color</span><span class="o">=</span><span class="s">'YlGn'</span><span class="p">,</span>
         <span class="n">fill_opacity</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span>
         <span class="n">line_opacity</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span>
-    <span class="p">)</span><span class="o">.</span><span class="n">add_to</span><span class="p">(</span><span class="n">districts</span><span class="p">)</span>
+    <span class="p">).</span><span class="n">add_to</span><span class="p">(</span><span class="n">districts</span><span class="p">)</span>
     
-    <span class="n">districts</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s">"districts.html"</span><span class="p">)</span>
+    <span class="n">districts</span><span class="p">.</span><span class="n">save</span><span class="p">(</span><span class="s">"districts.html"</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">districts</span>
 
 <span class="n">show_district_map</span><span class="p">(</span><span class="s">"sat_score"</span><span class="p">)</span>
@@ -3471,7 +3471,7 @@ Name: sat_score, Length: 95, dtype: float64
 We can explore this with a scatter plot that compares total enrollment across all schools to SAT scores across all schools.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
-<span class="n">full</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s">'total_enrollment'</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s">'sat_score'</span><span class="p">)</span>
+<span class="n">full</span><span class="p">.</span><span class="n">plot</span><span class="p">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s">'total_enrollment'</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s">'sat_score'</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p><img src="/assets/images/SAT-Analysis/output_67_1.png" alt="png" /></p>
@@ -3482,7 +3482,7 @@ We can explore this with a scatter plot that compares total enrollment across al
 
 <p>Now that we know the percentage of English language learners in a school is correlated with lower SAT scores, we can explore the relationship. The ell_percent column is the percentage of students in each school who are learning English. We can make a scatterplot of this relationship.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">full</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s">'ell_percent'</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s">'sat_score'</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">full</span><span class="p">.</span><span class="n">plot</span><span class="p">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s">'ell_percent'</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s">'sat_score'</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p><img src="/assets/images/SAT-Analysis/output_71_1.png" alt="png" /></p>
@@ -3500,7 +3500,7 @@ We can explore this with a scatter plot that compares total enrollment across al
 
 <p>It would be fair to assume that the results of student, parent, and teacher surveys would have a large correlation with SAT scores. It makes sense that schools with high academic expectations, for instance, would tend to have higher SAT scores. To test this theory, lets plot out SAT scores and the various survey metrics.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">full</span><span class="o">.</span><span class="n">corr</span><span class="p">()[</span><span class="s">"sat_score"</span><span class="p">][[</span><span class="s">"rr_s"</span><span class="p">,</span> <span class="s">"rr_t"</span><span class="p">,</span> <span class="s">"rr_p"</span><span class="p">,</span> <span class="s">"N_s"</span><span class="p">,</span> <span class="s">"N_t"</span><span class="p">,</span> <span class="s">"N_p"</span><span class="p">,</span> <span class="s">"saf_tot_11"</span><span class="p">,</span> <span class="s">"com_tot_11"</span><span class="p">,</span> <span class="s">"aca_tot_11"</span><span class="p">,</span> <span class="s">"eng_tot_11"</span><span class="p">]]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">bar</span><span class="p">()</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">full</span><span class="p">.</span><span class="n">corr</span><span class="p">()[</span><span class="s">"sat_score"</span><span class="p">][[</span><span class="s">"rr_s"</span><span class="p">,</span> <span class="s">"rr_t"</span><span class="p">,</span> <span class="s">"rr_p"</span><span class="p">,</span> <span class="s">"N_s"</span><span class="p">,</span> <span class="s">"N_t"</span><span class="p">,</span> <span class="s">"N_p"</span><span class="p">,</span> <span class="s">"saf_tot_11"</span><span class="p">,</span> <span class="s">"com_tot_11"</span><span class="p">,</span> <span class="s">"aca_tot_11"</span><span class="p">,</span> <span class="s">"eng_tot_11"</span><span class="p">]].</span><span class="n">plot</span><span class="p">.</span><span class="n">bar</span><span class="p">()</span>
 </code></pre></div></div>
 
 <p><img src="/assets/images/SAT-Analysis/output_77_1.png" alt="png" /></p>
@@ -3509,7 +3509,7 @@ We can explore this with a scatter plot that compares total enrollment across al
 
 <h2 id="exploring-race-and-sat-scores">Exploring race and SAT scores</h2>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">full</span><span class="o">.</span><span class="n">corr</span><span class="p">()[</span><span class="s">"sat_score"</span><span class="p">][[</span><span class="s">"white_per"</span><span class="p">,</span> <span class="s">"asian_per"</span><span class="p">,</span> <span class="s">"black_per"</span><span class="p">,</span> <span class="s">"hispanic_per"</span><span class="p">]]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">bar</span><span class="p">()</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">full</span><span class="p">.</span><span class="n">corr</span><span class="p">()[</span><span class="s">"sat_score"</span><span class="p">][[</span><span class="s">"white_per"</span><span class="p">,</span> <span class="s">"asian_per"</span><span class="p">,</span> <span class="s">"black_per"</span><span class="p">,</span> <span class="s">"hispanic_per"</span><span class="p">]].</span><span class="n">plot</span><span class="p">.</span><span class="n">bar</span><span class="p">()</span>
 </code></pre></div></div>
 
 <p><img src="/assets/images/SAT-Analysis/output_80_1.png" alt="png" /></p>
@@ -3527,12 +3527,12 @@ We can explore this with a scatter plot that compares total enrollment across al
 
 <p>The final angle to explore is the relationship between gender and SAT score. We noted that a higher percentage of females in a school tends to correlate with higher SAT scores. We can visualize this with a bar graph:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">full</span><span class="o">.</span><span class="n">corr</span><span class="p">()[</span><span class="s">"sat_score"</span><span class="p">][[</span><span class="s">"male_per"</span><span class="p">,</span> <span class="s">"female_per"</span><span class="p">]]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">bar</span><span class="p">()</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">full</span><span class="p">.</span><span class="n">corr</span><span class="p">()[</span><span class="s">"sat_score"</span><span class="p">][[</span><span class="s">"male_per"</span><span class="p">,</span> <span class="s">"female_per"</span><span class="p">]].</span><span class="n">plot</span><span class="p">.</span><span class="n">bar</span><span class="p">()</span>
 </code></pre></div></div>
 
 <p><img src="/assets/images/SAT-Analysis/output_86_1.png" alt="png" /></p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">full</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s">'female_per'</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s">'sat_score'</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">full</span><span class="p">.</span><span class="n">plot</span><span class="p">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s">'female_per'</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s">'sat_score'</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p><img src="/assets/images/SAT-Analysis/output_87_1.png" alt="png" /></p>
@@ -3542,7 +3542,7 @@ We can explore this with a scatter plot that compares total enrollment across al
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">full</span><span class="p">[(</span><span class="n">full</span><span class="p">[</span><span class="s">"female_per"</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">65</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">full</span><span class="p">[</span><span class="s">"sat_score"</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">1400</span><span class="p">)][</span><span class="s">"School Name"</span><span class="p">]</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>3             PROFESSIONAL PERFORMING ARTS HIGH SCH
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>3             PROFESSIONAL PERFORMING ARTS HIGH SCH
 92                    ELEANOR ROOSEVELT HIGH SCHOOL
 100                    TALENT UNLIMITED HIGH SCHOOL
 111            FIORELLO H. LAGUARDIA HIGH SCHOOL OF
@@ -3560,17 +3560,17 @@ Name: School Name, dtype: object
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">full</span><span class="p">[</span><span class="s">"ap_avg"</span><span class="p">]</span> <span class="o">=</span> <span class="n">full</span><span class="p">[</span><span class="s">"AP Test Takers "</span><span class="p">]</span> <span class="o">/</span> <span class="n">full</span><span class="p">[</span><span class="s">"total_enrollment"</span><span class="p">]</span>
 
-<span class="n">full</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s">'ap_avg'</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s">'sat_score'</span><span class="p">)</span>
+<span class="n">full</span><span class="p">.</span><span class="n">plot</span><span class="p">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s">'ap_avg'</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s">'sat_score'</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p><img src="/assets/images/SAT-Analysis/output_93_1.png" alt="png" /></p>
 
 <p>It looks like there is indeed a strong correlation between the two. An interesting cluster of schools is the one at the top right, which has high SAT scores and a high proportion of students that take the AP exams:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">full</span><span class="p">[(</span><span class="n">full</span><span class="p">[</span><span class="s">"ap_avg"</span><span class="p">]</span> <span class="o">&gt;</span> <span class="o">.</span><span class="mi">3</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">full</span><span class="p">[</span><span class="s">"sat_score"</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">1700</span><span class="p">)][</span><span class="s">"School Name"</span><span class="p">]</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">full</span><span class="p">[(</span><span class="n">full</span><span class="p">[</span><span class="s">"ap_avg"</span><span class="p">]</span> <span class="o">&gt;</span> <span class="p">.</span><span class="mi">3</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">full</span><span class="p">[</span><span class="s">"sat_score"</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">1700</span><span class="p">)][</span><span class="s">"School Name"</span><span class="p">]</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>92             ELEANOR ROOSEVELT HIGH SCHOOL
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>92             ELEANOR ROOSEVELT HIGH SCHOOL
 98                    STUYVESANT HIGH SCHOOL
 157             BRONX HIGH SCHOOL OF SCIENCE
 161    HIGH SCHOOL OF AMERICAN STUDIES AT LE
@@ -3812,7 +3812,7 @@ Name: School Name, dtype: object
 
 
 <footer class="footer-main">
-    Martin Pedernera © 2019 <a class="link" href="http://localhost:4000/feed.xml" target="_blank"><svg class="icon icon-rss"><use xlink:href="#icon-rss"></use></svg></a>
+    Martin Pedernera © 2020 <a class="link" href="http://localhost:4000/feed.xml" target="_blank"><svg class="icon icon-rss"><use xlink:href="#icon-rss"></use></svg></a>
 
     <!-- <p class="extra">
         <a class="link" href="https://github.com/sergiokopplin/indigo">Indigo theme</a> by <a class="link" href="https://github.com/sergiokopplin/indigo">Kopplin</a>

@@ -24,9 +24,9 @@
     <meta property="og:image" content="http://localhost:4000/assets/images/profile.jpg">
     <meta property="og:type" content="profile">
 
-    <!-- Begin Jekyll SEO tag v2.5.0 -->
+    <!-- Begin Jekyll SEO tag v2.6.1 -->
 <title>Web Scraping with Python | Martin Pedernera</title>
-<meta name="generator" content="Jekyll v3.8.5" />
+<meta name="generator" content="Jekyll v3.9.0" />
 <meta property="og:title" content="Web Scraping with Python" />
 <meta name="author" content="pederneramartin" />
 <meta property="og:locale" content="en_US" />
@@ -36,9 +36,9 @@
 <meta property="og:url" content="http://localhost:4000/WebScrapingSelenium/" />
 <meta property="og:site_name" content="Martin Pedernera" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2019-05-07T20:00:00+01:00" />
+<meta property="article:published_time" content="2019-05-07T20:00:00+02:00" />
 <script type="application/ld+json">
-{"description":"Using selenium library to scrape data from ecommerce sites.","author":{"@type":"Person","name":"pederneramartin"},"@type":"BlogPosting","url":"http://localhost:4000/WebScrapingSelenium/","headline":"Web Scraping with Python","dateModified":"2019-05-07T20:00:00+01:00","datePublished":"2019-05-07T20:00:00+01:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/WebScrapingSelenium/"},"@context":"http://schema.org"}</script>
+{"headline":"Web Scraping with Python","dateModified":"2019-05-07T20:00:00+02:00","datePublished":"2019-05-07T20:00:00+02:00","url":"http://localhost:4000/WebScrapingSelenium/","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/WebScrapingSelenium/"},"author":{"@type":"Person","name":"pederneramartin"},"description":"Using selenium library to scrape data from ecommerce sites.","@type":"BlogPosting","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
     
@@ -2598,52 +2598,52 @@ button.close { padding: 0; cursor: pointer; background: transparent; border: 0; 
 <span class="kn">import</span> <span class="nn">json</span>
 <span class="kn">import</span> <span class="nn">datetime</span>
 
-<span class="c">#CHROME</span>
-<span class="n">chrome_path</span> <span class="o">=</span> <span class="s">r"path of webdriver"</span>
-<span class="n">driver</span> <span class="o">=</span> <span class="n">webdriver</span><span class="o">.</span><span class="n">Chrome</span><span class="p">(</span><span class="n">executable_path</span><span class="o">=</span><span class="n">chrome_path</span><span class="p">)</span>
+<span class="c1">#CHROME
+</span><span class="n">chrome_path</span> <span class="o">=</span> <span class="s">r"path of webdriver"</span>
+<span class="n">driver</span> <span class="o">=</span> <span class="n">webdriver</span><span class="p">.</span><span class="n">Chrome</span><span class="p">(</span><span class="n">executable_path</span><span class="o">=</span><span class="n">chrome_path</span><span class="p">)</span>
 
-<span class="c">#EXTRACTION</span>
-<span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="n">url</span><span class="p">,</span><span class="n">i</span><span class="p">):</span>
-    <span class="n">driver</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="c1">#EXTRACTION
+</span><span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="n">url</span><span class="p">,</span><span class="n">i</span><span class="p">):</span>
+    <span class="n">driver</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
     <span class="k">try</span><span class="p">:</span>
-        <span class="n">name_raw</span> <span class="o">=</span> <span class="n">driver</span><span class="o">.</span><span class="n">find_element_by_xpath</span><span class="p">(</span><span class="s">'//h1[@id="title"]'</span><span class="p">)</span>
-        <span class="n">NAME</span> <span class="o">=</span> <span class="n">name_raw</span><span class="o">.</span><span class="n">text</span>
+        <span class="n">name_raw</span> <span class="o">=</span> <span class="n">driver</span><span class="p">.</span><span class="n">find_element_by_xpath</span><span class="p">(</span><span class="s">'//h1[@id="title"]'</span><span class="p">)</span>
+        <span class="n">NAME</span> <span class="o">=</span> <span class="n">name_raw</span><span class="p">.</span><span class="n">text</span>
     <span class="k">except</span> <span class="nb">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
             <span class="n">NAME</span> <span class="o">=</span> <span class="bp">None</span>
             <span class="k">pass</span>  
     <span class="k">try</span><span class="p">:</span>
-        <span class="n">saleprice_raw</span> <span class="o">=</span> <span class="n">driver</span><span class="o">.</span><span class="n">find_element_by_xpath</span><span class="p">(</span><span class="s">'//span[contains(@id,"ourprice") or contains(@id,"saleprice") or contains(@id,"priceblock_dealprice")]'</span><span class="p">)</span>
-        <span class="n">SALE_PRICE</span> <span class="o">=</span> <span class="n">saleprice_raw</span><span class="o">.</span><span class="n">text</span>
+        <span class="n">saleprice_raw</span> <span class="o">=</span> <span class="n">driver</span><span class="p">.</span><span class="n">find_element_by_xpath</span><span class="p">(</span><span class="s">'//span[contains(@id,"ourprice") or contains(@id,"saleprice") or contains(@id,"priceblock_dealprice")]'</span><span class="p">)</span>
+        <span class="n">SALE_PRICE</span> <span class="o">=</span> <span class="n">saleprice_raw</span><span class="p">.</span><span class="n">text</span>
     <span class="k">except</span> <span class="nb">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
             <span class="n">SALE_PRICE</span> <span class="o">=</span> <span class="bp">None</span>
             <span class="k">pass</span>
     <span class="k">try</span><span class="p">:</span>
-        <span class="n">originalprice_raw</span> <span class="o">=</span> <span class="n">driver</span><span class="o">.</span><span class="n">find_element_by_xpath</span><span class="p">(</span><span class="s">'//span[contains(@class,"a-text-strike") or contains(@id,"a-text-strike")]'</span><span class="p">)</span>
-        <span class="n">ORIGINAL_PRICE</span> <span class="o">=</span> <span class="n">originalprice_raw</span><span class="o">.</span><span class="n">text</span>
+        <span class="n">originalprice_raw</span> <span class="o">=</span> <span class="n">driver</span><span class="p">.</span><span class="n">find_element_by_xpath</span><span class="p">(</span><span class="s">'//span[contains(@class,"a-text-strike") or contains(@id,"a-text-strike")]'</span><span class="p">)</span>
+        <span class="n">ORIGINAL_PRICE</span> <span class="o">=</span> <span class="n">originalprice_raw</span><span class="p">.</span><span class="n">text</span>
     <span class="k">except</span> <span class="nb">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
             <span class="n">ORIGINAL_PRICE</span> <span class="o">=</span> <span class="bp">None</span>
             <span class="k">pass</span>      
     <span class="k">try</span><span class="p">:</span>
-        <span class="n">availability_raw</span> <span class="o">=</span> <span class="n">driver</span><span class="o">.</span><span class="n">find_element_by_xpath</span><span class="p">(</span><span class="s">'//div[@id="availability"]'</span><span class="p">)</span>
-        <span class="n">AVAILABILITY</span> <span class="o">=</span> <span class="n">availability_raw</span><span class="o">.</span><span class="n">text</span>
+        <span class="n">availability_raw</span> <span class="o">=</span> <span class="n">driver</span><span class="p">.</span><span class="n">find_element_by_xpath</span><span class="p">(</span><span class="s">'//div[@id="availability"]'</span><span class="p">)</span>
+        <span class="n">AVAILABILITY</span> <span class="o">=</span> <span class="n">availability_raw</span><span class="p">.</span><span class="n">text</span>
     <span class="k">except</span> <span class="nb">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
             <span class="n">AVAILABILITY</span> <span class="o">=</span> <span class="bp">None</span>
             <span class="k">pass</span>
     <span class="k">try</span><span class="p">:</span>
-        <span class="n">reviews_raw</span> <span class="o">=</span> <span class="n">driver</span><span class="o">.</span><span class="n">find_element_by_xpath</span><span class="p">(</span><span class="s">'//span[@id="acrCustomerReviewText"]'</span><span class="p">)</span>
-        <span class="n">REVIEWS</span> <span class="o">=</span> <span class="n">reviews_raw</span><span class="o">.</span><span class="n">text</span>
+        <span class="n">reviews_raw</span> <span class="o">=</span> <span class="n">driver</span><span class="p">.</span><span class="n">find_element_by_xpath</span><span class="p">(</span><span class="s">'//span[@id="acrCustomerReviewText"]'</span><span class="p">)</span>
+        <span class="n">REVIEWS</span> <span class="o">=</span> <span class="n">reviews_raw</span><span class="p">.</span><span class="n">text</span>
     <span class="k">except</span> <span class="nb">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
             <span class="n">REVIEWS</span> <span class="o">=</span> <span class="bp">None</span>
             <span class="k">pass</span>
     <span class="k">try</span><span class="p">:</span>
-        <span class="n">stars_raw</span> <span class="o">=</span> <span class="n">driver</span><span class="o">.</span><span class="n">find_element_by_xpath</span><span class="p">(</span><span class="s">'//span[@id="acrPopover"]'</span><span class="p">)</span>
-        <span class="n">STARS</span> <span class="o">=</span> <span class="n">stars_raw</span><span class="o">.</span><span class="n">get_attribute</span><span class="p">(</span><span class="s">'title'</span><span class="p">)</span>
+        <span class="n">stars_raw</span> <span class="o">=</span> <span class="n">driver</span><span class="p">.</span><span class="n">find_element_by_xpath</span><span class="p">(</span><span class="s">'//span[@id="acrPopover"]'</span><span class="p">)</span>
+        <span class="n">STARS</span> <span class="o">=</span> <span class="n">stars_raw</span><span class="p">.</span><span class="n">get_attribute</span><span class="p">(</span><span class="s">'title'</span><span class="p">)</span>
     <span class="k">except</span> <span class="nb">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
             <span class="n">STARS</span> <span class="o">=</span> <span class="bp">None</span>
             <span class="k">pass</span>
     <span class="k">try</span><span class="p">:</span>
-        <span class="n">ranking_raw</span> <span class="o">=</span> <span class="n">driver</span><span class="o">.</span><span class="n">find_element_by_xpath</span><span class="p">(</span><span class="s">'//*[@id="productDetails_detailBullets_sections1"]/tbody/tr[8]/td/span/span[2]'</span><span class="p">)</span>
-        <span class="n">RANKING</span> <span class="o">=</span> <span class="n">ranking_raw</span><span class="o">.</span><span class="n">text</span>
+        <span class="n">ranking_raw</span> <span class="o">=</span> <span class="n">driver</span><span class="p">.</span><span class="n">find_element_by_xpath</span><span class="p">(</span><span class="s">'//*[@id="productDetails_detailBullets_sections1"]/tbody/tr[8]/td/span/span[2]'</span><span class="p">)</span>
+        <span class="n">RANKING</span> <span class="o">=</span> <span class="n">ranking_raw</span><span class="p">.</span><span class="n">text</span>
     <span class="k">except</span> <span class="nb">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
         <span class="n">RANKING</span> <span class="o">=</span> <span class="bp">None</span>
         <span class="k">pass</span>
@@ -2652,7 +2652,7 @@ button.close { padding: 0; cursor: pointer; background: transparent; border: 0; 
         <span class="n">SALE_PRICE</span> <span class="o">=</span> <span class="n">ORIGINAL_PRICE</span>
         
     <span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
-            <span class="s">'DATE'</span><span class="p">:</span><span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">,</span>
+            <span class="s">'DATE'</span><span class="p">:</span><span class="n">datetime</span><span class="p">.</span><span class="n">date</span><span class="p">,</span>
             <span class="s">'NAME'</span><span class="p">:</span><span class="n">NAME</span><span class="p">,</span>
             <span class="s">'SALE_PRICE'</span><span class="p">:</span><span class="n">SALE_PRICE</span><span class="p">,</span>
             <span class="s">'ORIGINAL_PRICE'</span><span class="p">:</span><span class="n">ORIGINAL_PRICE</span><span class="p">,</span>
@@ -2667,18 +2667,18 @@ button.close { padding: 0; cursor: pointer; background: transparent; border: 0; 
     
 
 <span class="k">def</span> <span class="nf">ReadID</span><span class="p">():</span>
-    <span class="c">#URLs or IDs</span>
-    <span class="n">IDS</span> <span class="o">=</span> <span class="p">[</span><span class="s">'ID/URL'</span><span class="p">,</span>
+    <span class="c1">#URLs or IDs
+</span>    <span class="n">IDS</span> <span class="o">=</span> <span class="p">[</span><span class="s">'ID/URL'</span><span class="p">,</span>
     <span class="s">'ID/URL'</span><span class="p">,</span>
             <span class="p">]</span>
     
-    <span class="c">#ITERATION</span>
-    <span class="n">extracted_data</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="c1">#ITERATION
+</span>    <span class="n">extracted_data</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">IDS</span><span class="p">:</span>
         <span class="n">url</span> <span class="o">=</span> <span class="s">"web page of the ecommerce site"</span><span class="o">+</span><span class="n">i</span>
-        <span class="n">extracted_data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">parse</span><span class="p">(</span><span class="n">url</span><span class="p">,</span><span class="n">i</span><span class="p">))</span>
+        <span class="n">extracted_data</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">parse</span><span class="p">(</span><span class="n">url</span><span class="p">,</span><span class="n">i</span><span class="p">))</span>
     <span class="n">f</span><span class="o">=</span><span class="nb">open</span><span class="p">(</span><span class="s">'data.json'</span><span class="p">,</span><span class="s">'w'</span><span class="p">)</span>
-    <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">extracted_data</span><span class="p">,</span><span class="n">f</span><span class="p">,</span><span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+    <span class="n">json</span><span class="p">.</span><span class="n">dump</span><span class="p">(</span><span class="n">extracted_data</span><span class="p">,</span><span class="n">f</span><span class="p">,</span><span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
     
 <span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">"__main__"</span><span class="p">:</span>
     <span class="n">ReadID</span><span class="p">()</span>
@@ -2854,7 +2854,7 @@ button.close { padding: 0; cursor: pointer; background: transparent; border: 0; 
 
 
 <footer class="footer-main">
-    Martin Pedernera © 2019 <a class="link" href="http://localhost:4000/feed.xml" target="_blank"><svg class="icon icon-rss"><use xlink:href="#icon-rss"></use></svg></a>
+    Martin Pedernera © 2020 <a class="link" href="http://localhost:4000/feed.xml" target="_blank"><svg class="icon icon-rss"><use xlink:href="#icon-rss"></use></svg></a>
 
     <!-- <p class="extra">
         <a class="link" href="https://github.com/sergiokopplin/indigo">Indigo theme</a> by <a class="link" href="https://github.com/sergiokopplin/indigo">Kopplin</a>
